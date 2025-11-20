@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{358aa73c-7fbd-4068-a319-dde1e82ba3e6}</ProjectGuid>
+    <RootNamespace>qlogicae</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include=".qlogicae\application\configurations\qlogicae.json" />
+    <None Include=".qlogicae\application\scripts\environment_variables\get.ps1" />
+    <None Include=".qlogicae\application\scripts\environment_variables\set.ps1" />
+    <None Include=".qlogicae\application\scripts\environment_variables\view.ps1" />
+    <None Include=".qlogicae\application\scripts\inno_setup\deploy.ps1" />
+    <None Include=".qlogicae\application\scripts\inno_setup\template.iss" />
+    <None Include=".qlogicae\application\scripts\utilities.ps1" />
+    <None Include=".qlogicae\application\scripts\visual_studio_2022\build.ps1" />
+    <None Include=".qlogicae\application\scripts\windows_registry\get.ps1" />
+    <None Include=".qlogicae\application\scripts\windows_registry\set.ps1" />
+    <None Include=".qlogicae\application\scripts\windows_registry\setup.ps1" />
+    <None Include=".qlogicae\application\scripts\windows_registry\view.ps1" />
+    <None Include=".qlogicae\application\templates\debug\build\qlogicae\application\configurations\environment.json" />
+    <None Include=".qlogicae\application\templates\debug\environment_variables\system.json" />
+    <None Include=".qlogicae\application\templates\debug\environment_variables\user.json" />
+    <None Include=".qlogicae\application\templates\debug\windows_registry\hkcu.json" />
+    <None Include=".qlogicae\application\templates\debug\windows_registry\hklm.json" />
+    <None Include=".qlogicae\application\templates\default\build\qlogicae\application\configurations\qlogicae.json" />
+    <None Include=".qlogicae\application\templates\default\environment_variables\system.json" />
+    <None Include=".qlogicae\application\templates\default\environment_variables\user.json" />
+    <None Include=".qlogicae\application\templates\default\windows_registry\hkcu.json" />
+    <None Include=".qlogicae\application\templates\default\windows_registry\hklm.json" />
+    <None Include=".qlogicae\application\templates\development\build\qlogicae\application\configurations\environment.json" />
+    <None Include=".qlogicae\application\templates\development\environment_variables\system.json" />
+    <None Include=".qlogicae\application\templates\development\environment_variables\user.json" />
+    <None Include=".qlogicae\application\templates\development\windows_registry\hkcu.json" />
+    <None Include=".qlogicae\application\templates\development\windows_registry\hklm.json" />
+    <None Include=".qlogicae\application\templates\release\build\qlogicae\application\configurations\environment.json" />
+    <None Include=".qlogicae\application\templates\release\environment_variables\system.json" />
+    <None Include=".qlogicae\application\templates\release\environment_variables\user.json" />
+    <None Include=".qlogicae\application\templates\release\windows_registry\hkcu.json" />
+    <None Include=".qlogicae\application\templates\release\windows_registry\hklm.json" />
+    <None Include=".qlogicae\application\templates\test\build\qlogicae\application\configurations\environment.json" />
+    <None Include=".qlogicae\application\templates\test\environment_variables\system.json" />
+    <None Include=".qlogicae\application\templates\test\environment_variables\user.json" />
+    <None Include=".qlogicae\application\templates\test\windows_registry\hkcu.json" />
+    <None Include=".qlogicae\application\templates\test\windows_registry\hklm.json" />
+    <None Include="qlogicae\documentation\1.0.0\api.md" />
+    <None Include="qlogicae\documentation\1.0.0\collaboration.md" />
+    <None Include="qlogicae\documentation\1.0.0\development.md" />
+    <None Include="qlogicae\documentation\1.0.0\file-system.md" />
+    <None Include="qlogicae\documentation\1.0.0\index.md" />
+    <None Include="qlogicae\documentation\1.0.0\introduction.md" />
+    <None Include="qlogicae\documentation\1.0.0\legalities.md" />
+    <None Include="qlogicae\documentation\1.0.0\project-state.md" />
+    <None Include="qlogicae\documentation\1.0.0\quality-assurance.md" />
+    <None Include="qlogicae\documentation\1.0.0\references.md" />
+    <None Include="qlogicae\documentation\1.0.0\security.md" />
+    <None Include="qlogicae\documentation\index.md" />
+    <None Include="qlogicae\documentation\release-notes.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include=".qlogicae\application\templates\default\build\qlogicae\application\documentation\LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="qlogicae\assets\application.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
