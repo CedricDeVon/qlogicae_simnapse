@@ -5,7 +5,7 @@
 
 #include "application.hpp"
 
-namespace QLogicaeVS2022QtDesktop
+namespace QLogicaeSimNapse
 {
 
 }

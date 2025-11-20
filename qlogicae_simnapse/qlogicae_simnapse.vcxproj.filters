@@ -23,16 +23,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="qlogicae_simnapse_ui\qt\application.qrc">
+    <QtRcc Include="qlogicae_simnapse\qt\application.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
-    <QtUic Include="qlogicae_simnapse_ui\qt\application.ui">
+    <QtUic Include="qlogicae_simnapse\qt\application.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtMoc Include="qlogicae_simnapse_ui\includes\application.hpp">
+    <QtMoc Include="qlogicae_simnapse\includes\application.hpp">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <ClCompile Include="qlogicae_simnapse_ui\sources\application.cpp">
+    <ClCompile Include="qlogicae_simnapse\sources\application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClInclude Include="pch.hpp">
@@ -46,43 +46,43 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="qlogicae_simnapse_ui\sources\assembly.cpp">
+    <ClCompile Include="qlogicae_simnapse\sources\assembly.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="qlogicae_simnapse_ui\sources\all.cpp">
+    <ClCompile Include="qlogicae_simnapse\sources\all.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="qlogicae_simnapse_ui\sources\utilities.cpp">
+    <ClCompile Include="qlogicae_simnapse\sources\utilities.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="qlogicae_simnapse_ui\resources\application.h">
+    <ClInclude Include="qlogicae_simnapse\resources\application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="qlogicae_simnapse_ui\resources\application1.h">
+    <ClInclude Include="qlogicae_simnapse\resources\application1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="main.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="qlogicae_simnapse_ui\includes\assembly.hpp">
+    <ClInclude Include="qlogicae_simnapse\includes\assembly.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="qlogicae_simnapse_ui\includes\all.hpp">
+    <ClInclude Include="qlogicae_simnapse\includes\all.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="qlogicae_simnapse_ui\includes\utilities.hpp">
+    <ClInclude Include="qlogicae_simnapse\includes\utilities.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="qlogicae_simnapse_ui\resources\application.rc">
+    <ResourceCompile Include="qlogicae_simnapse\resources\application.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="qlogicae_simnapse_ui\assembly\x64_masm__main.asm">
+    <None Include="qlogicae_simnapse\assembly\x64_masm__main.asm">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>

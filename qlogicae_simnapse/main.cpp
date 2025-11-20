@@ -6,13 +6,13 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    QLogicaeVS2022QtDesktop::Application window;
+    QLogicaeSimNapse::Application window;
     window.show();
     
     return app.exec();
 }
 
-namespace QLogicaeVS2022QtDesktop
+namespace QLogicaeSimNapse
 {
 
 }

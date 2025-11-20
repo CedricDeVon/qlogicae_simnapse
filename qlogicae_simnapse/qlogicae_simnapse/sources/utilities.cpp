@@ -2,7 +2,7 @@
 
 #include "../includes/utilities.hpp"
 
-namespace QLogicaeVS2022QtDesktop
+namespace QLogicaeSimNapse
 {
 
 }

@@ -2,7 +2,7 @@
 
 #include "../includes/application.hpp"
 
-namespace QLogicaeVS2022QtDesktop
+namespace QLogicaeSimNapse
 {
     Application::Application(QWidget* parent)
         : QMainWindow(parent)

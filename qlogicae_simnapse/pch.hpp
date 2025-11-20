@@ -218,7 +218,7 @@
 #include <windows.h>
 
 
-namespace QLogicaeVS2022QtDesktop
+namespace QLogicaeSimNapse
 {
 
 }

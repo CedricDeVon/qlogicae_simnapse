@@ -16,7 +16,7 @@
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0</WindowsTargetPlatformVersion>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
-    <ProjectName>qlogicae_simnapse_ui</ProjectName>
+    <ProjectName>qlogicae_simnapse</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
@@ -231,20 +231,20 @@ xcopy "%QT_DIR%\plugins\platforms\qwindows.dll" "%OUT_DIR%\platforms\" /Y /F</Co
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="qlogicae_simnapse_ui\sources\utilities.cpp" />
-    <QtRcc Include="qlogicae_simnapse_ui\qt\application.qrc" />
-    <QtUic Include="qlogicae_simnapse_ui\qt\application.ui" />
-    <QtMoc Include="qlogicae_simnapse_ui\includes\application.hpp" />
-    <ClCompile Include="qlogicae_simnapse_ui\sources\all.cpp" />
-    <ClCompile Include="qlogicae_simnapse_ui\sources\application.cpp" />
-    <ClCompile Include="qlogicae_simnapse_ui\sources\assembly.cpp" />
+    <ClCompile Include="qlogicae_simnapse\sources\utilities.cpp" />
+    <QtRcc Include="qlogicae_simnapse\qt\application.qrc" />
+    <QtUic Include="qlogicae_simnapse\qt\application.ui" />
+    <QtMoc Include="qlogicae_simnapse\includes\application.hpp" />
+    <ClCompile Include="qlogicae_simnapse\sources\all.cpp" />
+    <ClCompile Include="qlogicae_simnapse\sources\application.cpp" />
+    <ClCompile Include="qlogicae_simnapse\sources\assembly.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClInclude Include="qlogicae_simnapse_ui\includes\all.hpp" />
-    <ClInclude Include="qlogicae_simnapse_ui\includes\assembly.hpp" />
+    <ClInclude Include="qlogicae_simnapse\includes\all.hpp" />
+    <ClInclude Include="qlogicae_simnapse\includes\assembly.hpp" />
     <ClInclude Include="main.hpp" />
-    <ClInclude Include="qlogicae_simnapse_ui\includes\utilities.hpp" />
-    <ClInclude Include="qlogicae_simnapse_ui\resources\application.h" />
-    <ClInclude Include="qlogicae_simnapse_ui\resources\application1.h" />
+    <ClInclude Include="qlogicae_simnapse\includes\utilities.hpp" />
+    <ClInclude Include="qlogicae_simnapse\resources\application.h" />
+    <ClInclude Include="qlogicae_simnapse\resources\application1.h" />
     <ClInclude Include="pch.hpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">Create</PrecompiledHeader>
@@ -252,10 +252,10 @@ xcopy "%QT_DIR%\plugins\platforms\qwindows.dll" "%OUT_DIR%\platforms\" /Y /F</Co
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="qlogicae_simnapse_ui\resources\application.rc" />
+    <ResourceCompile Include="qlogicae_simnapse\resources\application.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="qlogicae_simnapse_ui\assembly\x64_masm__main.asm" />
+    <None Include="qlogicae_simnapse\assembly\x64_masm__main.asm" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="qlogicae\application\assets\application.ico" />

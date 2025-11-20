@@ -8,7 +8,7 @@ extern "C" void x64_masm__main();
 
 #endif
 
-namespace QLogicaeVS2022QtDesktop
+namespace QLogicaeSimNapse
 {
 
 }
