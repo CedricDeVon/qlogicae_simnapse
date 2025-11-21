@@ -1,5 +1,8 @@
 #pragma once
 
+#include <QGraphicsOpacityEffect>
+#include <QParallelAnimationGroup>
+
 #include <QtCore/QDir>
 #include <QtCore/QMap>
 #include <QtCore/QHash>
