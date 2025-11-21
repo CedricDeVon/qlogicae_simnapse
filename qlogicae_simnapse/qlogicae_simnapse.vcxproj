@@ -231,8 +231,20 @@ xcopy "%QT_DIR%\plugins\platforms\qwindows.dll" "%OUT_DIR%\platforms\" /Y /F</Co
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="qlogicae_simnapse\sources\about.cpp" />
+    <ClCompile Include="qlogicae_simnapse\sources\evaluation.cpp" />
+    <ClCompile Include="qlogicae_simnapse\sources\settings.cpp" />
+    <ClCompile Include="qlogicae_simnapse\sources\loading.cpp" />
+    <ClCompile Include="qlogicae_simnapse\sources\main_menu.cpp" />
+    <ClCompile Include="qlogicae_simnapse\sources\splash.cpp">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
+    </ClCompile>
     <ClCompile Include="qlogicae_simnapse\sources\utilities.cpp" />
     <QtRcc Include="qlogicae_simnapse\qt\application.qrc" />
+    <QtUic Include="qlogicae_simnapse\qt\about.ui" />
     <QtUic Include="qlogicae_simnapse\qt\application.ui" />
     <QtMoc Include="qlogicae_simnapse\includes\application.hpp" />
     <ClCompile Include="qlogicae_simnapse\sources\all.cpp" />
@@ -243,6 +255,12 @@ xcopy "%QT_DIR%\plugins\platforms\qwindows.dll" "%OUT_DIR%\platforms\" /Y /F</Co
     <ClInclude Include="qlogicae_simnapse\includes\assembly.hpp" />
     <ClInclude Include="main.hpp" />
     <ClInclude Include="qlogicae_simnapse\includes\utilities.hpp" />
+    <QtMoc Include="qlogicae_simnapse\includes\loading.hpp" />
+    <QtMoc Include="qlogicae_simnapse\includes\splash.hpp" />
+    <QtMoc Include="qlogicae_simnapse\includes\main_menu.hpp" />
+    <QtMoc Include="qlogicae_simnapse\includes\about.hpp" />
+    <QtMoc Include="qlogicae_simnapse\includes\settings.hpp" />
+    <QtMoc Include="qlogicae_simnapse\includes\evaluation.hpp" />
     <ClInclude Include="qlogicae_simnapse\resources\application.h" />
     <ClInclude Include="qlogicae_simnapse\resources\application1.h" />
     <ClInclude Include="pch.hpp" />
@@ -250,6 +268,11 @@ xcopy "%QT_DIR%\plugins\platforms\qwindows.dll" "%OUT_DIR%\platforms\" /Y /F</Co
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <QtUic Include="qlogicae_simnapse\qt\evaluation.ui" />
+    <QtUic Include="qlogicae_simnapse\qt\loading.ui" />
+    <QtUic Include="qlogicae_simnapse\qt\main_menu.ui" />
+    <QtUic Include="qlogicae_simnapse\qt\settings.ui" />
+    <QtUic Include="qlogicae_simnapse\qt\splash.ui" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="qlogicae_simnapse\resources\application.rc" />
@@ -258,15 +281,82 @@ xcopy "%QT_DIR%\plugins\platforms\qwindows.dll" "%OUT_DIR%\platforms\" /Y /F</Co
     <None Include="qlogicae_simnapse\assembly\x64_masm__main.asm" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="qlogicae\application\assets\application.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\qlogicae_core\qlogicae_core\qlogicae_core.vcxproj">
       <Project>{07f44eb2-776b-4bb0-b462-589523a3d3f3}</Project>
     </ProjectReference>
     <ProjectReference Include="..\qlogicae_simnapse_core\qlogicae_simnapse_core.vcxproj">
       <Project>{dddb9a47-61fe-46c0-aaa9-a41a19f05022}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="qlogicae\application\assets\fonts\Inter\Inter-Italic-VariableFont_opsz,wght.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\Inter-VariableFont_opsz,wght.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_18pt-Bold.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_18pt-BoldItalic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_18pt-ExtraBold.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_18pt-ExtraBoldItalic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_18pt-Italic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_18pt-Regular.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_18pt-Thin.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_18pt-ThinItalic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_24pt-Bold.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_24pt-BoldItalic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_24pt-ExtraBold.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_24pt-ExtraBoldItalic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_24pt-Italic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_24pt-Regular.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_24pt-Thin.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_24pt-ThinItalic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_28pt-Bold.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_28pt-BoldItalic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_28pt-ExtraBold.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_28pt-ExtraBoldItalic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_28pt-Italic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_28pt-Regular.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_28pt-Thin.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_28pt-ThinItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="qlogicae\application\assets\fonts\Inter\OFL.txt" />
+    <Text Include="qlogicae\application\assets\fonts\Inter\README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="qlogicae\application\assets\application.ico" />
+    <Image Include="qlogicae\application\assets\application.png" />
+    <Image Include="qlogicae\application\assets\icons\aiAssistantToolWindow.png" />
+    <Image Include="qlogicae\application\assets\icons\aiAssistantToolWindow_dark.png" />
+    <Image Include="qlogicae\application\assets\icons\checked.png" />
+    <Image Include="qlogicae\application\assets\icons\checked_dark.png" />
+    <Image Include="qlogicae\application\assets\icons\chevronDown.png" />
+    <Image Include="qlogicae\application\assets\icons\chevronDown_dark.png" />
+    <Image Include="qlogicae\application\assets\icons\chevronLeft.png" />
+    <Image Include="qlogicae\application\assets\icons\chevronLeft_dark.png" />
+    <Image Include="qlogicae\application\assets\icons\chevronRight.png" />
+    <Image Include="qlogicae\application\assets\icons\chevronRight_dark.png" />
+    <Image Include="qlogicae\application\assets\icons\chevronUp.png" />
+    <Image Include="qlogicae\application\assets\icons\chevronUp_dark.png" />
+    <Image Include="qlogicae\application\assets\icons\desktop.png" />
+    <Image Include="qlogicae\application\assets\icons\desktop_dark.png" />
+    <Image Include="qlogicae\application\assets\icons\error.png" />
+    <Image Include="qlogicae\application\assets\icons\errorOutline.png" />
+    <Image Include="qlogicae\application\assets\icons\errorOutline_dark.png" />
+    <Image Include="qlogicae\application\assets\icons\error_dark.png" />
+    <Image Include="qlogicae\application\assets\icons\info.png" />
+    <Image Include="qlogicae\application\assets\icons\info_dark.png" />
+    <Image Include="qlogicae\application\assets\icons\loader.png" />
+    <Image Include="qlogicae\application\assets\icons\loader_dark.png" />
+    <Image Include="qlogicae\application\assets\icons\maximize_dark.png" />
+    <Image Include="qlogicae\application\assets\icons\minimize.png" />
+    <Image Include="qlogicae\application\assets\icons\minimize_dark.png" />
+    <Image Include="qlogicae\application\assets\icons\restore.png" />
+    <Image Include="qlogicae\application\assets\icons\restore_dark.png" />
+    <Image Include="qlogicae\application\assets\icons\settings.png" />
+    <Image Include="qlogicae\application\assets\icons\settings_dark.png" />
+    <Image Include="qlogicae\application\assets\icons\successDialog.png" />
+    <Image Include="qlogicae\application\assets\icons\successDialog_dark.png" />
+    <Image Include="qlogicae\application\assets\icons\warning.png" />
+    <Image Include="qlogicae\application\assets\icons\warning_dark.png" />
+    <Image Include="qlogicae\application\assets\qt.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

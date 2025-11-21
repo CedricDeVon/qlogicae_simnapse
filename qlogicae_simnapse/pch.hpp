@@ -1,5 +1,15 @@
 #pragma once
 
+#include <QFont>
+#include <QFile>
+#include <QIcon>
+#include <QTimer>
+#include <QDebug>
+#include <QString>
+#include <QtWidgets>
+#include <QSvgRenderer>
+#include <QApplication>
+#include <QFontDatabase>
 #include <QGraphicsOpacityEffect>
 #include <QParallelAnimationGroup>
 

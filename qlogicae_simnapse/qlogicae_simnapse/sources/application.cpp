@@ -23,30 +23,29 @@ namespace QLogicaeSimNapse
 
     void Application::_setup_window_screen()
     {
-        /*
         this->setWindowIcon(
             QIcon(
                 QString::fromStdString(
-                    QLogicaeRulexCore::UTILITIES.APPLICATION_LOGO
+                    ":/qlogicae/../../qlogicae/application/assets/application.ico"
                 )
             )
         );
         this->setWindowTitle(
             QString::fromStdString(
-                QLogicaeCore::APPLICATION.get_qlogicae_name()
+                "QLogicae SimNapse"
             )
         );
         _change_screen_type(
-            QLogicaeRulexCore::UTILITIES.APPLICATION_SETTINGS_CACHE_SCREEN_TYPE
+            3
         );
-        */
     }
 
     void Application::_setup_assets()
     {
-        /*
         int font_id = QFontDatabase::addApplicationFont(
-            QString::fromStdString(QLogicaeRulexCore::UTILITIES.APPLICATION_DEFAULT_QT_FONT_REFERENCE)
+            QString::fromStdString(
+                ":/qlogicae/../../qlogicae/application/assets/fonts/Inter/static/Inter_18pt-Regular.ttf"
+            )
         );
         if (font_id != -1)
         {
@@ -55,25 +54,27 @@ namespace QLogicaeSimNapse
             {
                 QString fontName = families.at(0);
                 QString style = QString::fromStdString(
-                    QLogicaeRulexCore::UTILITIES.APPLICATION_DEFAULT_QWIDGET_STYLE
+                    R"(
+                        QWidget {
+                            font-family: "%1";
+                        }
+                    )"
                 ).arg(fontName);
 
                 qApp->setStyleSheet(style);
             }
         }
-        */
     }
 
     void Application::_setup_widgets()
     {
-        /*
         _splash_widget = new Splash();
         _loading_widget = new Loading();
-        _mainmenu_widget = new MainMenu();
+        _main_menu_widget = new MainMenu();
 
         _ui.stackedWidget->addWidget(_splash_widget);
         _ui.stackedWidget->addWidget(_loading_widget);
-        _ui.stackedWidget->addWidget(_mainmenu_widget);
+        _ui.stackedWidget->addWidget(_main_menu_widget);
 
         _ui.stackedWidget->setCurrentWidget(_splash_widget);
         setCentralWidget(_ui.stackedWidget);
@@ -86,15 +87,14 @@ namespace QLogicaeSimNapse
 
         connect(_loading_widget, &Loading::on_loading_complete, this, [this]()
             {
-                _ui.stackedWidget->setCurrentWidget(_mainmenu_widget);
+                _ui.stackedWidget->setCurrentWidget(_main_menu_widget);
             }
         );
 
-        connect(_mainmenu_widget, QOverload<int>::of(&MainMenu::on_screen_changed), this, [this](int index)
+        connect(_main_menu_widget, QOverload<int>::of(&MainMenu::on_screen_changed), this, [this](int index)
             {
                 _change_screen_type(index);
             });
-        */
     }
 
     void Application::_change_screen_type(

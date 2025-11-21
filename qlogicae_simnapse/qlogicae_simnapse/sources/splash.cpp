@@ -25,10 +25,12 @@ namespace QLogicaeSimNapse
 
     void Splash::showEvent(QShowEvent* event)
     {
-        QTimer::singleShot(500, this, [this]()
+        QTimer::singleShot(
+            500, this, [this]()
             {
                 this->_main_animation_group->start();
-            });
+            }
+        );
     }
 
     void Splash::_setup_widgets()

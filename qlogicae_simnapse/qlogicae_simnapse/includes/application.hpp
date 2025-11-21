@@ -14,7 +14,7 @@ namespace QLogicaeSimNapse
         Q_OBJECT
 
     public:
-        Application(
+        explicit Application(
             QWidget* parent = nullptr
         );
         ~Application();
@@ -22,9 +22,9 @@ namespace QLogicaeSimNapse
     private:
         Ui::ApplicationClass _ui;
 
-        MainMenu* _main_menu_widget;
         Splash* _splash_widget;
         Loading* _loading_widget;
+        MainMenu* _main_menu_widget;
 
         void _setup_assets();
         void _setup_widgets();

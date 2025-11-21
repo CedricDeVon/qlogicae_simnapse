@@ -2,8 +2,13 @@
 
 #include "main.hpp"
 
-int main(int argc, char *argv[])
+int main(
+    int argc,
+    char *argv[]
+)
 {
+    QLogicaeCore::QLOGICAE_APPLICATION.setup();
+
     QApplication app(argc, argv);
 
     QLogicaeSimNapse::Application window;

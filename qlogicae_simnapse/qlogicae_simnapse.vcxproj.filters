@@ -55,6 +55,24 @@
     <ClCompile Include="qlogicae_simnapse\sources\utilities.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="qlogicae_simnapse\sources\loading.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qlogicae_simnapse\sources\main_menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qlogicae_simnapse\sources\splash.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qlogicae_simnapse\sources\about.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qlogicae_simnapse\sources\settings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qlogicae_simnapse\sources\evaluation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="qlogicae_simnapse\resources\application.h">
@@ -87,8 +105,185 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_18pt-Bold.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_18pt-BoldItalic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_18pt-ExtraBold.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_18pt-ExtraBoldItalic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_18pt-Italic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_18pt-Regular.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_18pt-Thin.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_18pt-ThinItalic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_24pt-Bold.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_24pt-BoldItalic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_24pt-ExtraBold.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_24pt-ExtraBoldItalic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_24pt-Italic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_24pt-Regular.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_24pt-Thin.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_24pt-ThinItalic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_28pt-Bold.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_28pt-BoldItalic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_28pt-ExtraBold.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_28pt-ExtraBoldItalic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_28pt-Italic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_28pt-Regular.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_28pt-Thin.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_28pt-ThinItalic.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\Inter-Italic-VariableFont_opsz,wght.ttf" />
+    <Font Include="qlogicae\application\assets\fonts\Inter\Inter-VariableFont_opsz,wght.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="qlogicae\application\assets\fonts\Inter\OFL.txt" />
+    <Text Include="qlogicae\application\assets\fonts\Inter\README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="qlogicae\application\assets\icons\aiAssistantToolWindow.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\aiAssistantToolWindow_dark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\checked.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\checked_dark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\chevronDown.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\chevronDown_dark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\chevronLeft.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\chevronLeft_dark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\chevronRight.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\chevronRight_dark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\chevronUp.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\chevronUp_dark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\desktop.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\desktop_dark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\error.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\error_dark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\errorOutline.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\errorOutline_dark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\info.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\info_dark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\loader.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\loader_dark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\maximize_dark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\minimize.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\minimize_dark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\restore.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\restore_dark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\settings.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\settings_dark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\successDialog.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\successDialog_dark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\warning.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\icons\warning_dark.png">
+      <Filter>Resource Files</Filter>
+    </Image>
     <Image Include="qlogicae\application\assets\application.ico">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="qlogicae\application\assets\application.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="qlogicae\application\assets\qt.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="qlogicae_simnapse\includes\loading.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="qlogicae_simnapse\includes\splash.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="qlogicae_simnapse\includes\main_menu.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="qlogicae_simnapse\includes\about.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="qlogicae_simnapse\includes\settings.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="qlogicae_simnapse\includes\evaluation.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="qlogicae_simnapse\qt\loading.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="qlogicae_simnapse\qt\splash.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="qlogicae_simnapse\qt\main_menu.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="qlogicae_simnapse\qt\about.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="qlogicae_simnapse\qt\settings.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="qlogicae_simnapse\qt\evaluation.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>
