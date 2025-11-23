@@ -4,11 +4,15 @@
 #include "utilities.hpp"
 
 #include "application.hpp"
-#include "xor_neural_network.hpp"
-#include "xor_multi_layered_perceptron.hpp"
-#include "xor_multi_layered_perceptron_activator.hpp"
-#include "xor_multi_layered_perceptron_training_data.hpp"
-#include "xor_multi_layered_perceptron_prediction_data.hpp"
+#include "and_or_perceptron.hpp"
+#include "and_or_perceptron_activator.hpp"
+#include "and_or_neural_network_configurations.hpp"
+#include "and_or_neural_network_training_results.hpp"
+#include "and_or_neural_network_prediction_results.hpp"
+#include "and_or_perceptron_activator_configurations.hpp"
+#include "and_or_neural_network_training_epoch_results.hpp"
+#include "and_or_neural_network_training_configurations.hpp"
+#include "and_or_neural_network_prediction_configurations.hpp"
 
 namespace QLogicaeSimNapseCore
 {

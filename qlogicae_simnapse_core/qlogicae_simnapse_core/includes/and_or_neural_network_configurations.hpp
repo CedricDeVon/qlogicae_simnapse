@@ -2,7 +2,7 @@
 
 namespace QLogicaeSimNapseCore
 {
-	struct XORMultiLayeredPerceptronTrainingData
+	struct AndOrNeuralNetworkConfigurations
 	{
 
 	};

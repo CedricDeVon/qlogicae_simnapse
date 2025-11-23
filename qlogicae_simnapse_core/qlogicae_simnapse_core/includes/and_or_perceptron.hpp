@@ -1,15 +1,12 @@
 #pragma once
 
-#include "xor_multi_layered_perceptron.hpp"
-#include "xor_multi_layered_perceptron_activator.hpp"
-#include "xor_multi_layered_perceptron_training_data.hpp"
-#include "xor_multi_layered_perceptron_prediction_data.hpp"
-
 #include "qlogicae_core/includes/result.hpp"
+#include "qlogicae_core/includes/logger.hpp"
+#include "qlogicae_core/includes/utilities.hpp"
 
 namespace QLogicaeSimNapseCore
 {
-    class XORNeuralNetwork
+    class AndOrPerceptron
     {
     public:
         bool setup();
@@ -34,6 +31,10 @@ namespace QLogicaeSimNapseCore
 
 
 
+        
+
+
+
         bool terminate();
 
         void terminate(
@@ -54,34 +55,34 @@ namespace QLogicaeSimNapseCore
             const std::function<void(QLogicaeCore::Result<void>& result)>& callback
         );
 
-        static XORNeuralNetwork& get_instance();
+        static AndOrPerceptron& get_instance();
 
         static void get_instance(
-            QLogicaeCore::Result<XORNeuralNetwork*>& result
+            QLogicaeCore::Result<AndOrPerceptron*>& result
         );
 
     protected:
-        XORNeuralNetwork();
+        AndOrPerceptron();
 
-        ~XORNeuralNetwork();
+        ~AndOrPerceptron();
 
-        XORNeuralNetwork(
-            const XORNeuralNetwork& instance
+        AndOrPerceptron(
+            const AndOrPerceptron& instance
         ) = default;
 
-        XORNeuralNetwork(
-            XORNeuralNetwork&& instance
+        AndOrPerceptron(
+            AndOrPerceptron&& instance
         ) noexcept = delete;
 
-        XORNeuralNetwork& operator = (
-            XORNeuralNetwork&& instance
+        AndOrPerceptron& operator = (
+            AndOrPerceptron&& instance
             ) = default;
 
-        XORNeuralNetwork& operator = (
-            const XORNeuralNetwork& instance
+        AndOrPerceptron& operator = (
+            const AndOrPerceptron& instance
             ) = delete;
     };
 
-    inline static XORNeuralNetwork& XOR_NEURAL_NETWORK =
-        XORNeuralNetwork::get_instance();
+    inline static AndOrPerceptron& XOR_MULTI_LAYERED_PERCEPTRON =
+        AndOrPerceptron::get_instance();
 }

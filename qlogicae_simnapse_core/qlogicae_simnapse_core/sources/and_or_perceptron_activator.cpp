@@ -1,20 +1,20 @@
 #include "pch.hpp"
 
-#include "../includes/xor_multi_layered_perceptron_activator.hpp"
+#include "../includes/and_or_perceptron_activator.hpp"
 
 namespace QLogicaeSimNapseCore
 {
-	XORMultiLayeredPerceptronActivator::XORMultiLayeredPerceptronActivator()
+	AndOrPerceptronActivator::AndOrPerceptronActivator()
 	{
 
 	}
 
-	XORMultiLayeredPerceptronActivator::~XORMultiLayeredPerceptronActivator()
+	AndOrPerceptronActivator::~AndOrPerceptronActivator()
 	{
 
 	}
 
-    bool XORMultiLayeredPerceptronActivator::setup()
+    bool AndOrPerceptronActivator::setup()
     {
         try
         {
@@ -29,7 +29,7 @@ namespace QLogicaeSimNapseCore
         catch (const std::exception& exception)
         {
             QLogicaeCore::LOGGER.handle_exception_async(
-                "QLogicaeSimNapseCore::XORMultiLayeredPerceptronActivator::setup()",
+                "QLogicaeSimNapseCore::AndOrPerceptronActivator::setup()",
                 exception.what()
             );
 
@@ -37,14 +37,14 @@ namespace QLogicaeSimNapseCore
         }
     }
 
-    void XORMultiLayeredPerceptronActivator::setup(
+    void AndOrPerceptronActivator::setup(
         QLogicaeCore::Result<void>& result
     )
     {
         result.set_to_good_status_without_value();
     }
 
-    std::future<bool> XORMultiLayeredPerceptronActivator::setup_async()
+    std::future<bool> AndOrPerceptronActivator::setup_async()
     {
         std::promise<bool> promise;
         auto future = promise.get_future();
@@ -63,7 +63,7 @@ namespace QLogicaeSimNapseCore
         return future;
     }
 
-    void XORMultiLayeredPerceptronActivator::setup_async(
+    void AndOrPerceptronActivator::setup_async(
         QLogicaeCore::Result<std::future<void>>& result
     )
     {
@@ -90,7 +90,7 @@ namespace QLogicaeSimNapseCore
         );
     }
 
-    void XORMultiLayeredPerceptronActivator::setup_async(
+    void AndOrPerceptronActivator::setup_async(
         const std::function<void(const bool& result)>& callback
     )
     {
@@ -105,7 +105,7 @@ namespace QLogicaeSimNapseCore
         );
     }
 
-    void XORMultiLayeredPerceptronActivator::setup_async(
+    void AndOrPerceptronActivator::setup_async(
         const std::function<void(QLogicaeCore::Result<void>& result)>& callback
     )
     {
@@ -129,17 +129,17 @@ namespace QLogicaeSimNapseCore
 
 
 
-    double XORMultiLayeredPerceptronActivator::get_sigmoid_activation(
-        const double& x
+    bool AndOrPerceptronActivator::get_activation(
+        const AndOrPerceptronActivatorConfigurations& configurations
     )
     {
         try
         {
-            QLogicaeCore::Result<double> result;
+            QLogicaeCore::Result<bool> result;
 
-            get_sigmoid_activation(
+            get_activation(
                 result,
-                x
+                configurations
             );
 
             return result.get_value();
@@ -147,7 +147,7 @@ namespace QLogicaeSimNapseCore
         catch (const std::exception& exception)
         {
             QLogicaeCore::LOGGER.handle_exception_async(
-                "QLogicaeSimNapseCore::XORMultiLayeredPerceptronActivator::get_sigmoid_activation()",
+                "QLogicaeSimNapseCore::AndOrPerceptronActivator::get_activation()",
                 exception.what()
             );
 
@@ -155,31 +155,41 @@ namespace QLogicaeSimNapseCore
         }
     }
 
-    void XORMultiLayeredPerceptronActivator::get_sigmoid_activation(
-        QLogicaeCore::Result<double>& result,
-        const double& x
+    void AndOrPerceptronActivator::get_activation(
+        QLogicaeCore::Result<bool>& result,
+        const AndOrPerceptronActivatorConfigurations& configurations
     )
     {
+        size_t index, size;
+        size = configurations.model_weights.size();
+        double sum_result = configurations.model_bias;
+        for (index = 0; index < size; ++index)
+        {
+            sum_result +=
+                configurations.model_weights[index] *
+                configurations.inputs[index];
+        }
+
         result.set_to_good_status_with_value(
-            1.0 / (1.0 + std::exp(-x))
+            sum_result >= 0
         );
     }
 
-    std::future<double> XORMultiLayeredPerceptronActivator::get_sigmoid_activation_async(
-        const double& x
+    std::future<bool> AndOrPerceptronActivator::get_activation_async(
+        const AndOrPerceptronActivatorConfigurations& configurations
     )
     {
-        std::promise<double> promise;
+        std::promise<bool> promise;
         auto future = promise.get_future();
 
         boost::asio::post(
             QLogicaeCore::UTILITIES.BOOST_ASIO_POOL,
-            [this, x,
+            [this, configurations,
             promise = std::move(promise)]() mutable
             {
                 promise.set_value(
-                    get_sigmoid_activation(
-                        x
+                    get_activation(
+                        configurations
                     )
                 );
             }
@@ -188,24 +198,24 @@ namespace QLogicaeSimNapseCore
         return future;
     }
 
-    void XORMultiLayeredPerceptronActivator::get_sigmoid_activation_async(
-        QLogicaeCore::Result<std::future<double>>& result,
-        const double& x
+    void AndOrPerceptronActivator::get_activation_async(
+        QLogicaeCore::Result<std::future<bool>>& result,
+        const AndOrPerceptronActivatorConfigurations& configurations
     )
     {
-        std::promise<double> promise;
+        std::promise<bool> promise;
         auto future = promise.get_future();
 
         boost::asio::post(
             QLogicaeCore::UTILITIES.BOOST_ASIO_POOL,
-            [this, x,
+            [this, configurations,
             promise = std::move(promise)]() mutable
             {
-                QLogicaeCore::Result<double> result;
+                QLogicaeCore::Result<bool> result;
 
-                get_sigmoid_activation(
+                get_activation(
                     result,
-                    x
+                    configurations
                 );
 
                 promise.set_value(
@@ -219,38 +229,38 @@ namespace QLogicaeSimNapseCore
         );
     }
 
-    void XORMultiLayeredPerceptronActivator::get_sigmoid_activation_async(
-        const std::function<void(const double& result)>& callback,
-        const double& x
+    void AndOrPerceptronActivator::get_activation_async(
+        const std::function<void(const bool& result)>& callback,
+        const AndOrPerceptronActivatorConfigurations& configurations
     )
     {
         boost::asio::post(
             QLogicaeCore::UTILITIES.BOOST_ASIO_POOL,
-            [this, x, callback]() mutable
+            [this, configurations, callback]() mutable
             {
                 callback(
-                    get_sigmoid_activation(
-                        x
+                    get_activation(
+                        configurations
                     )
                 );
             }
         );
     }
 
-    void XORMultiLayeredPerceptronActivator::get_sigmoid_activation_async(
-        const std::function<void(QLogicaeCore::Result<double>& result)>& callback,
-        const double& x
+    void AndOrPerceptronActivator::get_activation_async(
+        const std::function<void(QLogicaeCore::Result<bool>& result)>& callback,
+        const AndOrPerceptronActivatorConfigurations& configurations
     )
     {
         boost::asio::post(
             QLogicaeCore::UTILITIES.BOOST_ASIO_POOL,
-            [this, x, callback]() mutable
+            [this, configurations, callback]() mutable
             {
-                QLogicaeCore::Result<double> result;
+                QLogicaeCore::Result<bool> result;
 
-                get_sigmoid_activation(
+                get_activation(
                     result,
-                    x
+                    configurations
                 );
 
                 callback(
@@ -260,138 +270,8 @@ namespace QLogicaeSimNapseCore
         );
     }
 
-    double XORMultiLayeredPerceptronActivator::get_sigmoid_derivative(
-        const double& x
-    )
-    {
-        try
-        {
-            QLogicaeCore::Result<double> result;
 
-            get_sigmoid_derivative(
-                result,
-                x
-            );
-
-            return result.get_value();
-        }
-        catch (const std::exception& exception)
-        {
-            QLogicaeCore::LOGGER.handle_exception_async(
-                "QLogicaeSimNapseCore::XORMultiLayeredPerceptronActivator::get_sigmoid_derivative()",
-                exception.what()
-            );
-
-            return false;
-        }
-    }
-
-    void XORMultiLayeredPerceptronActivator::get_sigmoid_derivative(
-        QLogicaeCore::Result<double>& result,
-        const double& x
-    )
-    {
-        result.set_to_good_status_with_value(
-            x * (1 - x)
-        );
-    }
-
-    std::future<double> XORMultiLayeredPerceptronActivator::get_sigmoid_derivative_async(
-        const double& x
-    )
-    {
-        std::promise<double> promise;
-        auto future = promise.get_future();
-
-        boost::asio::post(
-            QLogicaeCore::UTILITIES.BOOST_ASIO_POOL,
-            [this, x,
-            promise = std::move(promise)]() mutable
-            {
-                promise.set_value(
-                    get_sigmoid_derivative(
-                        x
-                    )
-                );
-            }
-        );
-
-        return future;
-    }
-
-    void XORMultiLayeredPerceptronActivator::get_sigmoid_derivative_async(
-        QLogicaeCore::Result<std::future<double>>& result,
-        const double& x
-    )
-    {
-        std::promise<double> promise;
-        auto future = promise.get_future();
-
-        boost::asio::post(
-            QLogicaeCore::UTILITIES.BOOST_ASIO_POOL,
-            [this, x,
-            promise = std::move(promise)]() mutable
-            {
-                QLogicaeCore::Result<double> result;
-
-                get_sigmoid_derivative(
-                    result,
-                    x
-                );
-
-                promise.set_value(
-                    result.get_value()
-                );
-            }
-        );
-
-        result.set_to_good_status_with_value(
-            std::move(future)
-        );
-    }
-
-    void XORMultiLayeredPerceptronActivator::get_sigmoid_derivative_async(
-        const std::function<void(const double& result)>& callback,
-        const double& x
-    )
-    {
-        boost::asio::post(
-            QLogicaeCore::UTILITIES.BOOST_ASIO_POOL,
-            [this, x, callback]() mutable
-            {
-                callback(
-                    get_sigmoid_derivative(
-                        x
-                    )
-                );
-            }
-        );
-    }
-
-    void XORMultiLayeredPerceptronActivator::get_sigmoid_derivative_async(
-        const std::function<void(QLogicaeCore::Result<double>& result)>& callback,
-        const double& x
-    )
-    {
-        boost::asio::post(
-            QLogicaeCore::UTILITIES.BOOST_ASIO_POOL,
-            [this, x, callback]() mutable
-            {
-                QLogicaeCore::Result<double> result;
-
-                get_sigmoid_derivative(
-                    result,
-                    x
-                );
-
-                callback(
-                    result
-                );
-            }
-        );
-    }
-
-    bool XORMultiLayeredPerceptronActivator::terminate()
+    bool AndOrPerceptronActivator::terminate()
     {
         try
         {
@@ -406,7 +286,7 @@ namespace QLogicaeSimNapseCore
         catch (const std::exception& exception)
         {
             QLogicaeCore::LOGGER.handle_exception_async(
-                "QLogicaeSimNapseCore::XORMultiLayeredPerceptronActivator::terminate()",
+                "QLogicaeSimNapseCore::AndOrPerceptronActivator::terminate()",
                 exception.what()
             );
 
@@ -414,14 +294,14 @@ namespace QLogicaeSimNapseCore
         }
     }
 
-    void XORMultiLayeredPerceptronActivator::terminate(
+    void AndOrPerceptronActivator::terminate(
         QLogicaeCore::Result<void>& result
     )
     {
         result.set_to_good_status_without_value();
     }
 
-    std::future<bool> XORMultiLayeredPerceptronActivator::terminate_async()
+    std::future<bool> AndOrPerceptronActivator::terminate_async()
     {
         std::promise<bool> promise;
         auto future = promise.get_future();
@@ -440,7 +320,7 @@ namespace QLogicaeSimNapseCore
         return future;
     }
 
-    void XORMultiLayeredPerceptronActivator::terminate_async(
+    void AndOrPerceptronActivator::terminate_async(
         QLogicaeCore::Result<std::future<void>>& result
     )
     {
@@ -467,7 +347,7 @@ namespace QLogicaeSimNapseCore
         );
     }
 
-    void XORMultiLayeredPerceptronActivator::terminate_async(
+    void AndOrPerceptronActivator::terminate_async(
         const std::function<void(const bool& result)>& callback
     )
     {
@@ -482,7 +362,7 @@ namespace QLogicaeSimNapseCore
         );
     }
 
-    void XORMultiLayeredPerceptronActivator::terminate_async(
+    void AndOrPerceptronActivator::terminate_async(
         const std::function<void(QLogicaeCore::Result<void>& result)>& callback
     )
     {
