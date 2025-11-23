@@ -206,6 +206,10 @@
       <Project>{dddb9a47-61fe-46c0-aaa9-a41a19f05022}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="xor_model.onnx" />
+    <None Include="xor_model.pth" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />

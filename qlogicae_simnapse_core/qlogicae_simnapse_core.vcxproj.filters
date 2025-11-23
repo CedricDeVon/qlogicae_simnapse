@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
+    <ClInclude Include="framework.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="qlogicae_simnapse_core\includes\all.hpp">
@@ -31,6 +31,36 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="pch.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="qlogicae_simnapse_core\includes\xor_neural_network.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="qlogicae_simnapse_core\includes\xor_multi_layered_perceptron.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="qlogicae_simnapse_core\includes\xor_multi_layered_perceptron_activator.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="qlogicae_simnapse_core\includes\xor_multi_layered_perceptron_training_data.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="qlogicae_simnapse_core\includes\xor_multi_layered_perceptron_prediction_data.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="qlogicae_simnapse_core\sources\xor_multi_layered_perceptron.cpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="qlogicae_simnapse_core\sources\xor_neural_network.cpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="qlogicae_simnapse_core\sources\xor_multi_layered_perceptron_activator.cpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="qlogicae_simnapse_core\sources\xor_multi_layered_perceptron_prediction_data.cpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="qlogicae_simnapse_core\sources\xor_multi_layered_perceptron_training_data.cpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

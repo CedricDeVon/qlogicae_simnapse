@@ -59,3 +59,35 @@ namespace QLogicaeSimNapseSandbox
 {
 
 }
+
+/*
+
+- neural_network_training_data
+    - epoch_number
+    - weights
+    - hidden_layer_biases
+    - output
+    - output bias
+    - learning rate
+    - x1, x2
+    - h1, h2
+    - error
+    - delta_out
+    - delta_h1
+    - delta_h2
+    - update_weights
+
+- neural_network
+    - mlp object
+    - forward_press
+    - train
+    - print_truth_table
+
+- multi_layered_perceptron
+    - weights
+
+- neural_network_activator
+    - get_activation_result
+    - get_derivative_result
+
+*/
