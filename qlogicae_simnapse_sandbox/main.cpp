@@ -86,8 +86,4 @@ namespace QLogicaeSimNapseSandbox
 - multi_layered_perceptron
     - weights
 
-- neural_network_activator
-    - get_activation_result
-    - get_derivative_result
-
 */

@@ -1,6 +1,8 @@
 #pragma once
 
 #include "qlogicae_core/includes/result.hpp"
+#include "qlogicae_core/includes/logger.hpp"
+#include "qlogicae_core/includes/utilities.hpp"
 
 namespace QLogicaeSimNapseCore
 {
@@ -29,6 +31,66 @@ namespace QLogicaeSimNapseCore
 
 
 
+        double get_sigmoid_activation(
+            const double& x
+        );
+
+        void get_sigmoid_activation(
+            QLogicaeCore::Result<double>& result,
+            const double& x
+        );
+
+        std::future<double> get_sigmoid_activation_async(
+            const double& x
+        );
+
+        void get_sigmoid_activation_async(
+            const std::function<void(const double& result)>& callback,
+            const double& x
+        );
+
+        void get_sigmoid_activation_async(
+            QLogicaeCore::Result<std::future<double>>& result,
+            const double& x
+        );
+
+        void get_sigmoid_activation_async(
+            const std::function<void(QLogicaeCore::Result<double>& result)>& callback,
+            const double& x
+        );
+
+
+
+        double get_sigmoid_derivative(
+            const double& x
+        );
+
+        void get_sigmoid_derivative(
+            QLogicaeCore::Result<double>& result,
+            const double& x
+        );
+
+        std::future<double> get_sigmoid_derivative_async(
+            const double& x
+        );
+
+        void get_sigmoid_derivative_async(
+            const std::function<void(const double& result)>& callback,
+            const double& x
+        );
+
+        void get_sigmoid_derivative_async(
+            QLogicaeCore::Result<std::future<double>>& result,
+            const double& x
+        );
+
+        void get_sigmoid_derivative_async(
+            const std::function<void(QLogicaeCore::Result<double>& result)>& callback,
+            const double& x
+        );
+
+
+        
         bool terminate();
 
         void terminate(
