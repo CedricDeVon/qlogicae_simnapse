@@ -159,7 +159,7 @@ namespace QLogicaeSimNapseCore
     )
     {        
         std::string configurations_model_name =
-            configurations.model_name;
+            configurations.name;
 
         if (!_models.contains(configurations_model_name))
         {
@@ -304,7 +304,12 @@ namespace QLogicaeSimNapseCore
     )
     {
         std::string configurations_model_name =
-            configurations.model_name;
+            configurations.name;
+
+        if (!_models.contains(configurations_model_name))
+        {
+            return result.set_to_bad_status_without_value();
+        }
 
         result.set_to_good_status_with_value(
             _models[configurations_model_name].predict(

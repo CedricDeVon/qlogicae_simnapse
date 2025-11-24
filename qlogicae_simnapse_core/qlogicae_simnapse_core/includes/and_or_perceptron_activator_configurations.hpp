@@ -6,8 +6,8 @@ namespace QLogicaeSimNapseCore
 	{		
 		std::vector<int> inputs = {};
 
-		std::vector<double> model_weights = {};
+		std::vector<double> weights = {};
 
-		double model_bias = 0;
+		double bias = 0;
 	};
 }

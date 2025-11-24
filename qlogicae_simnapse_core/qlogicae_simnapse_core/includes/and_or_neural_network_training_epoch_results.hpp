@@ -8,11 +8,11 @@ namespace QLogicaeSimNapseCore
 
 		double bias = 0.0;
 
-		std::vector<int> predictions = { 0, 0 };
+		std::vector<int> predictions = { 0, 0, 0, 0 };
 
-		std::vector<int> errors = { 0, 0 };
+		std::vector<int> errors = { 0, 0, 0, 0 };
 
-		std::vector<double> model_weights = { 0.0, 0.0 };
+		std::vector<double> weights = { 0.0, 0.0 };
 
 		double timestamp_started = 0.0;
 

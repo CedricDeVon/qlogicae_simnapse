@@ -154,8 +154,6 @@ namespace QLogicaeSimNapseCore
         std::unordered_map<std::string, AndOrPerceptron> _models;
     };
 
-    /*
     inline static AndOrNeuralNetwork& AND_OR_NEURAL_NETWORK =
         AndOrNeuralNetwork::get_instance();
-    */
 }

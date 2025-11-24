@@ -6,21 +6,21 @@ namespace QLogicaeSimNapseCore
 {
 	struct AndOrNeuralNetworkTrainingConfigurations
 	{
-		std::string model_name = "";
+		std::string name = "";
 		
+		size_t maximum_learning_epoch = 100;
+
 		std::vector<std::vector<int>> inputs = {};
 
 		std::vector<int> outputs = {};
 
-		double model_bias = 0.0;
+		std::vector<double> weights = { 0.0, 0.0 };
 
-		double model_learning_rate = 2.0;
+		double bias = 0.0;
 
-		size_t maximum_learning_epoch = 100;
+		double learning_rate = 2.0;
 
 		std::function<void(const AndOrNeuralNetworkTrainingEpochResults&)> callback =
 			[](const AndOrNeuralNetworkTrainingEpochResults& result) {};
-
-		std::vector<double> model_weights = { 0.0, 0.0 };
 	};
 }

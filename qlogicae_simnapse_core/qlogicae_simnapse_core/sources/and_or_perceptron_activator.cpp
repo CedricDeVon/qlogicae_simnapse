@@ -160,13 +160,20 @@ namespace QLogicaeSimNapseCore
         const AndOrPerceptronActivatorConfigurations& configurations
     )
     {
-        size_t index, size;
-        size = configurations.model_weights.size();
-        double sum = configurations.model_bias;
-        for (index = 0; index < size; ++index)
+        size_t
+            index,
+            size = configurations.weights.size();
+
+        double sum = configurations.bias;
+        
+        for (
+            index = 0;
+            index < size;
+            ++index
+        )
         {
             sum +=
-                configurations.model_weights[index] *
+                configurations.weights[index] *
                 configurations.inputs[index];
         }
 

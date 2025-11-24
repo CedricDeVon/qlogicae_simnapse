@@ -4,7 +4,7 @@ namespace QLogicaeSimNapseCore
 {
 	struct AndOrNeuralNetworkPredictionConfigurations
 	{
-		std::string model_name = "";
+		std::string name = "";
 
 		std::vector<int> inputs = {};
 	};

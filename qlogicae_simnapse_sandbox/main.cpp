@@ -6,12 +6,13 @@ int main(int argc, char** argv)
 {    
     QLogicaeSimNapseCore::AndOrNeuralNetworkTrainingConfigurations and_training_configurations =
     {
-        .model_name = "&&",
+        .name = "&&",
+        .maximum_learning_epoch = 100,
         .inputs = { { 0, 0 }, { 0, 1 }, { 1, 0 }, { 1, 1 } },
         .outputs = { 0, 0, 0, 1 },
-        .model_bias = 0.0,
-        .model_learning_rate = 1.5,
-        .maximum_learning_epoch = 100,
+        .weights = { 0.0, 0.0 },
+        .bias = 0.0,
+        .learning_rate = 1.5,
         .callback = [](const QLogicaeSimNapseCore::AndOrNeuralNetworkTrainingEpochResults& result)
         {
             std::cout << "AND: current_epoch: " << result.current_epoch << "\n";
@@ -33,22 +34,22 @@ int main(int argc, char** argv)
             }
             std::cout << "\n";
             std::cout << "model_weights: ";
-            for (size_t i = 0; i < result.model_weights.size(); ++i)
+            for (size_t i = 0; i < result.weights.size(); ++i)
             {
-                std::cout << result.model_weights[i] << " ";
+                std::cout << result.weights[i] << " ";
             }            
             std::cout << "\n\n";
-        },   
-        .model_weights = { 0.0, 0.0 }
+        }
     };
     QLogicaeSimNapseCore::AndOrNeuralNetworkTrainingConfigurations or_training_configurations =
     {
-        .model_name = "||",
+        .name = "||",
+        .maximum_learning_epoch = 100,
         .inputs = { { 0, 0 }, { 0, 1 }, { 1, 0 }, { 1, 1 } },
         .outputs = { 0, 1, 1, 1 },
-        .model_bias = 0.0,
-        .model_learning_rate = 1.5,
-        .maximum_learning_epoch = 100,
+        .weights = { 0.0, 0.0 },
+        .bias = 0.0,
+        .learning_rate = 1.5,
         .callback = [](const QLogicaeSimNapseCore::AndOrNeuralNetworkTrainingEpochResults& result)
         {
             std::cout << "OR: current_epoch: " << result.current_epoch << "\n";
@@ -70,23 +71,21 @@ int main(int argc, char** argv)
             }
             std::cout << "\n";
             std::cout << "model_weights: ";
-            for (size_t i = 0; i < result.model_weights.size(); ++i)
+            for (size_t i = 0; i < result.weights.size(); ++i)
             {
-                std::cout << result.model_weights[i] << " ";
+                std::cout << result.weights[i] << " ";
             }
             std::cout << "\n\n";
-        },
-        .model_weights = { 0.0, 0.0 }
+        }
     };
 
-    QLogicaeSimNapseCore::AndOrNeuralNetwork::get_instance().train(
+    QLogicaeSimNapseCore::AND_OR_NEURAL_NETWORK.train(
             and_training_configurations
         );
     
-    QLogicaeSimNapseCore::AndOrNeuralNetwork::get_instance().train(
+    QLogicaeSimNapseCore::AND_OR_NEURAL_NETWORK.train(
             or_training_configurations
         );
-
 
     std::vector<std::string> models = { "||", "&&" };
     std::vector<std::vector<int>> inputs = { { 0, 0 }, { 0, 1 }, { 1, 0 }, { 1, 1 } };
@@ -95,14 +94,14 @@ int main(int argc, char** argv)
     {
         for (size_t j = 0; j < inputs.size(); ++j)
         {
-            QLogicaeSimNapseCore::AndOrNeuralNetworkPredictionConfigurations and_prediction_configurations =
+            QLogicaeSimNapseCore::AndOrNeuralNetworkPredictionConfigurations prediction_configurations =
             {
-                .model_name = models[i],
+                .name = models[i],
                 .inputs = inputs[j]
             };
             QLogicaeSimNapseCore::AndOrNeuralNetworkPredictionResults prediction_results =
-                QLogicaeSimNapseCore::AndOrNeuralNetwork::get_instance().predict(
-                    and_prediction_configurations
+                QLogicaeSimNapseCore::AND_OR_NEURAL_NETWORK.predict(
+                    prediction_configurations
                 );
             std::cout << inputs[j][0] << " " << models[i] << " " << inputs[j][1] << " = " << prediction_results.value << "\n";
         }        

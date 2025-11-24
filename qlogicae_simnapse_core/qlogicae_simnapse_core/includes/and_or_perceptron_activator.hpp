@@ -108,8 +108,7 @@ namespace QLogicaeSimNapseCore
             const AndOrPerceptronActivator& instance
             ) = delete;
     };
-    /*
+
     inline static AndOrPerceptronActivator& AND_OR_PERCEPTRON_ACTIVATOR =
         AndOrPerceptronActivator::get_instance();
-    */
 }
