@@ -2,7 +2,7 @@
 
 #include "utilities.hpp"
 
-namespace QLogicaeVS2022GoogleTest
+namespace QLogicaeSimNapseCoreTest
 {
 
 }

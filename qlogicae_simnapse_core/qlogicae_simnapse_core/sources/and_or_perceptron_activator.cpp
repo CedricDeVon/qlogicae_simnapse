@@ -133,10 +133,17 @@ namespace QLogicaeSimNapseCore
         const AndOrPerceptronActivatorConfigurations& configurations
     )
     {
+        QLogicaeCore::Result<int> result;
+
         try
         {
-            QLogicaeCore::Result<int> result;
-
+            if (configurations.inputs.size() != 2 ||
+                configurations.weights.size() != 2
+            )
+            {
+                return result.get_value();
+            }
+            
             get_activation(
                 result,
                 configurations
@@ -151,7 +158,7 @@ namespace QLogicaeSimNapseCore
                 exception.what()
             );
 
-            return false;
+            return result.get_value();
         }
     }
 
@@ -400,11 +407,9 @@ namespace QLogicaeSimNapseCore
     void AndOrPerceptronActivator::get_instance(
         QLogicaeCore::Result<AndOrPerceptronActivator*>& result
     )
-    {
-        static AndOrPerceptronActivator instance;
-
+    {        
         result.set_to_good_status_with_value(
-            &instance
+            &get_instance()
         );
     }
 }

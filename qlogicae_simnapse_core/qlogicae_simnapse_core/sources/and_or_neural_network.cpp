@@ -536,10 +536,8 @@ namespace QLogicaeSimNapseCore
         QLogicaeCore::Result<AndOrNeuralNetwork*>& result
     )
     {
-        static AndOrNeuralNetwork instance;
-
         result.set_to_good_status_with_value(
-            &instance
+            &get_instance()
         );
     }
 }

@@ -144,20 +144,38 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="main.hpp" />
     <ClInclude Include="pch.hpp" />
     <ClInclude Include="qlogicae_simnapse_core_test\includes\all.hpp" />
+    <ClInclude Include="qlogicae_simnapse_core_test\includes\and_or_neural_network.hpp" />
+    <ClInclude Include="qlogicae_simnapse_core_test\includes\and_or_neural_network_configurations.hpp" />
+    <ClInclude Include="qlogicae_simnapse_core_test\includes\and_or_neural_network_prediction_configurations.hpp" />
+    <ClInclude Include="qlogicae_simnapse_core_test\includes\and_or_neural_network_prediction_results.hpp" />
+    <ClInclude Include="qlogicae_simnapse_core_test\includes\and_or_neural_network_training_configurations.hpp" />
+    <ClInclude Include="qlogicae_simnapse_core_test\includes\and_or_neural_network_training_epoch_results.hpp" />
+    <ClInclude Include="qlogicae_simnapse_core_test\includes\and_or_neural_network_training_results.hpp" />
+    <ClInclude Include="qlogicae_simnapse_core_test\includes\and_or_perceptron.hpp" />
+    <ClInclude Include="qlogicae_simnapse_core_test\includes\and_or_perceptron_activator.hpp" />
+    <ClInclude Include="qlogicae_simnapse_core_test\includes\and_or_perceptron_activator_configurations.hpp" />
     <ClInclude Include="qlogicae_simnapse_core_test\includes\application.hpp" />
     <ClInclude Include="qlogicae_simnapse_core_test\includes\assembly.hpp" />
     <ClInclude Include="qlogicae_simnapse_core_test\includes\utilities.hpp" />
     <ClInclude Include="qlogicae_simnapse_core_test\resources\application.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="qlogicae_simnapse_core_test\sources\all.cpp" />
+    <ClCompile Include="qlogicae_simnapse_core_test\sources\and_or_neural_network.cpp" />
+    <ClCompile Include="qlogicae_simnapse_core_test\sources\and_or_neural_network_configurations.cpp" />
+    <ClCompile Include="qlogicae_simnapse_core_test\sources\and_or_neural_network_prediction_configurations.cpp" />
+    <ClCompile Include="qlogicae_simnapse_core_test\sources\and_or_neural_network_prediction_results.cpp" />
+    <ClCompile Include="qlogicae_simnapse_core_test\sources\and_or_neural_network_training_configurations.cpp" />
+    <ClCompile Include="qlogicae_simnapse_core_test\sources\and_or_neural_network_training_epoch_results.cpp" />
+    <ClCompile Include="qlogicae_simnapse_core_test\sources\and_or_neural_network_training_results.cpp" />
+    <ClCompile Include="qlogicae_simnapse_core_test\sources\and_or_perceptron.cpp" />
+    <ClCompile Include="qlogicae_simnapse_core_test\sources\and_or_perceptron_activator.cpp" />
+    <ClCompile Include="qlogicae_simnapse_core_test\sources\and_or_perceptron_activator_configurations.cpp" />
     <ClCompile Include="qlogicae_simnapse_core_test\sources\application.cpp" />
     <ClCompile Include="qlogicae_simnapse_core_test\sources\assembly.cpp" />
     <ClCompile Include="qlogicae_simnapse_core_test\sources\utilities.cpp" />
