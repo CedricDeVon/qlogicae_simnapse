@@ -126,13 +126,370 @@ namespace QLogicaeSimNapseCore
         );
     }
 
+    AndOrNeuralNetworkTrainingResults AndOrPerceptron::train(
+        const AndOrNeuralNetworkTrainingConfigurations& configurations
+    )
+    {
+        QLogicaeCore::Result<AndOrNeuralNetworkTrainingResults> result;
+        
+        try
+        {
+            train(
+                result,
+                configurations
+            );
+
+            return result.get_value();
+        }
+        catch (const std::exception& exception)
+        {
+            QLogicaeCore::LOGGER.handle_exception_async(
+                "QLogicaeSimNapseCore::AndOrPerceptron::train()",
+                exception.what()
+            );
+
+            return result.get_value();
+        }
+    }
+
+    void AndOrPerceptron::train(
+        QLogicaeCore::Result<AndOrNeuralNetworkTrainingResults>& result,
+        const AndOrNeuralNetworkTrainingConfigurations& configurations
+    )
+    {               
+        _configurations = configurations;
+
+        AndOrNeuralNetworkTrainingResults& training_results =
+            result.get_value();
+
+        size_t
+            input_index,
+            model_weight_index,
+            current_learning_epoch,
+            configurations_maximum_learning_epoch =
+                _configurations.maximum_learning_epoch;
+
+        int
+            prediction,
+            error;
+
+        double            
+            weight,
+            configurations_model_learning_rate =
+                _configurations.model_learning_rate;
+
+        training_results.epoch_results = std::vector<AndOrNeuralNetworkTrainingEpochResults>(_configurations.maximum_learning_epoch);        
+        training_results.timestamp_started = QLogicaeCore::TIME.now();        
+
+        for (current_learning_epoch = 0;
+            current_learning_epoch < configurations_maximum_learning_epoch;
+            ++current_learning_epoch
+        )
+        {       
+            training_results.epoch_results[current_learning_epoch].bias = 0.0;
+            training_results.epoch_results[current_learning_epoch].predictions = { 0, 0, 0, 0 };
+            training_results.epoch_results[current_learning_epoch].errors = { 0, 0, 0, 0 };
+            training_results.epoch_results[current_learning_epoch].model_weights = { 0.0, 0.0 };
+            training_results.epoch_results[current_learning_epoch].current_epoch = current_learning_epoch + 1;
+            training_results.epoch_results[current_learning_epoch].timestamp_started = QLogicaeCore::TIME.now();
+
+            for (input_index = 0;
+                input_index < 4;
+                ++input_index
+                )
+            {
+                prediction = AndOrPerceptronActivator::get_instance().get_activation(
+                    {
+                        .inputs = _configurations.inputs[input_index],
+                        .model_weights = _configurations.model_weights,
+                        .model_bias = _configurations.model_bias
+                    }
+                );
+                
+                training_results.epoch_results[current_learning_epoch].predictions[input_index] = prediction;
+                
+                error = _configurations.outputs[input_index] - prediction;
+                training_results.epoch_results[current_learning_epoch].errors[input_index] = error;
+                
+                for (model_weight_index = 0;
+                    model_weight_index < 2;
+                    ++model_weight_index
+                    )
+                {    
+                    weight = configurations_model_learning_rate *
+                        error * _configurations.inputs[input_index][model_weight_index];
+
+                    _configurations.model_weights[model_weight_index] += weight;
+
+                    training_results.epoch_results[current_learning_epoch].model_weights[model_weight_index] =
+                        _configurations.model_weights[model_weight_index];
+                }
+
+                _configurations.model_bias += configurations_model_learning_rate * error;
+                training_results.epoch_results[current_learning_epoch].bias = _configurations.model_bias;
+            }
+
+            training_results.epoch_results[current_learning_epoch].timestamp_ended = QLogicaeCore::TIME.now();
+
+            _configurations.callback(
+                training_results.epoch_results[current_learning_epoch]
+            );
+        }
+
+        training_results.timestamp_ended = QLogicaeCore::TIME.now();
+
+        result.set_status_to_good();
+    }
+
+    std::future<AndOrNeuralNetworkTrainingResults> AndOrPerceptron::train_async(
+        const AndOrNeuralNetworkTrainingConfigurations& configurations
+    )
+    {
+        std::promise<AndOrNeuralNetworkTrainingResults> promise;
+        auto future = promise.get_future();
+
+        boost::asio::post(
+            QLogicaeCore::UTILITIES.BOOST_ASIO_POOL,
+            [this, configurations,
+            promise = std::move(promise)]() mutable
+            {
+                promise.set_value(
+                    train(
+                        configurations
+                    )
+                );
+            }
+        );
+
+        return future;
+    }
+
+    void AndOrPerceptron::train_async(
+        const std::function<void(const AndOrNeuralNetworkTrainingResults& result)>& callback,
+        const AndOrNeuralNetworkTrainingConfigurations& configurations
+    )
+    {
+        boost::asio::post(
+            QLogicaeCore::UTILITIES.BOOST_ASIO_POOL,
+            [this, configurations, callback]() mutable
+            {
+                callback(
+                    train(
+                        configurations
+                    )
+                );
+            }
+        );
+    }
+
+    void AndOrPerceptron::train_async(
+        QLogicaeCore::Result<std::future<AndOrNeuralNetworkTrainingResults>>& result,
+        const AndOrNeuralNetworkTrainingConfigurations& configurations
+    )
+    {
+        std::promise<AndOrNeuralNetworkTrainingResults> promise;
+        auto future = promise.get_future();
+
+        boost::asio::post(
+            QLogicaeCore::UTILITIES.BOOST_ASIO_POOL,
+            [this, configurations,
+            promise = std::move(promise)]() mutable
+            {
+                QLogicaeCore::Result<AndOrNeuralNetworkTrainingResults> result;
+
+                train(
+                    result,
+                    configurations
+                );
+
+                promise.set_value(
+                    result.get_value()
+                );
+            }
+        );
+
+        result.set_to_good_status_with_value(
+            std::move(future)
+        );
+    }
+
+    void AndOrPerceptron::train_async(
+        const std::function<void(QLogicaeCore::Result<AndOrNeuralNetworkTrainingResults>& result)>& callback,
+        const AndOrNeuralNetworkTrainingConfigurations& configurations
+    )
+    {
+        boost::asio::post(
+            QLogicaeCore::UTILITIES.BOOST_ASIO_POOL,
+            [this, configurations, callback]() mutable
+            {
+                QLogicaeCore::Result<AndOrNeuralNetworkTrainingResults> result;
+
+                train(
+                    result,
+                    configurations
+                );
+
+                callback(
+                    result
+                );
+            }
+        );
+    }
+
+
+
+
+
+    AndOrNeuralNetworkPredictionResults AndOrPerceptron::predict(
+        const AndOrNeuralNetworkPredictionConfigurations& configurations
+    )
+    {
+        QLogicaeCore::Result<AndOrNeuralNetworkPredictionResults> result;
+        
+        try
+        {
+            predict(
+                result,
+                configurations
+            );
+
+            return result.get_value();
+        }
+        catch (const std::exception& exception)
+        {
+            QLogicaeCore::LOGGER.handle_exception_async(
+                "QLogicaeSimNapseCore::AndOrPerceptron::predict()",
+                exception.what()
+            );
+
+            return result.get_value();
+        }
+    }
+
+    void AndOrPerceptron::predict(
+        QLogicaeCore::Result<AndOrNeuralNetworkPredictionResults>& result,
+        const AndOrNeuralNetworkPredictionConfigurations& configurations
+    )
+    {
+        AndOrNeuralNetworkPredictionResults& prediction_results = result.get_value();
+        
+        prediction_results.timestamp_started = QLogicaeCore::TIME.now();
+        prediction_results.value = AndOrPerceptronActivator::get_instance().get_activation(
+            {
+                .inputs = configurations.inputs,
+                .model_weights = _configurations.model_weights,
+                .model_bias = _configurations.model_bias
+            }
+        );
+        prediction_results.timestamp_started = QLogicaeCore::TIME.now();
+
+        result.set_to_good_status_with_value(
+            prediction_results
+        );
+    }
+
+    std::future<AndOrNeuralNetworkPredictionResults> AndOrPerceptron::predict_async(
+        const AndOrNeuralNetworkPredictionConfigurations& configurations
+    )
+    {
+        std::promise<AndOrNeuralNetworkPredictionResults> promise;
+        auto future = promise.get_future();
+
+        boost::asio::post(
+            QLogicaeCore::UTILITIES.BOOST_ASIO_POOL,
+            [this, configurations,
+            promise = std::move(promise)]() mutable
+            {
+                promise.set_value(
+                    predict(
+                        configurations
+                    )
+                );
+            }
+        );
+
+        return future;
+    }
+
+    void AndOrPerceptron::predict_async(
+        const std::function<void(const AndOrNeuralNetworkPredictionResults& result)>& callback,
+        const AndOrNeuralNetworkPredictionConfigurations& configurations
+    )
+    {
+        boost::asio::post(
+            QLogicaeCore::UTILITIES.BOOST_ASIO_POOL,
+            [this, configurations, callback]() mutable
+            {
+                callback(
+                    predict(
+                        configurations
+                    )
+                );
+            }
+        );
+    }
+
+    void AndOrPerceptron::predict_async(
+        QLogicaeCore::Result<std::future<AndOrNeuralNetworkPredictionResults>>& result,
+        const AndOrNeuralNetworkPredictionConfigurations& configurations
+    )
+    {
+        std::promise<AndOrNeuralNetworkPredictionResults> promise;
+        auto future = promise.get_future();
+
+        boost::asio::post(
+            QLogicaeCore::UTILITIES.BOOST_ASIO_POOL,
+            [this, configurations,
+            promise = std::move(promise)]() mutable
+            {
+                QLogicaeCore::Result<AndOrNeuralNetworkPredictionResults> result;
+
+                predict(
+                    result,
+                    configurations
+                );
+
+                promise.set_value(
+                    result.get_value()
+                );
+            }
+        );
+
+        result.set_to_good_status_with_value(
+            std::move(future)
+        );
+    }
+
+    void AndOrPerceptron::predict_async(
+        const std::function<void(QLogicaeCore::Result<AndOrNeuralNetworkPredictionResults>& result)>& callback,
+        const AndOrNeuralNetworkPredictionConfigurations& configurations
+    )
+    {
+        boost::asio::post(
+            QLogicaeCore::UTILITIES.BOOST_ASIO_POOL,
+            [this, configurations, callback]() mutable
+            {
+                QLogicaeCore::Result<AndOrNeuralNetworkPredictionResults> result;
+
+                predict(
+                    result,
+                    configurations
+                );
+
+                callback(
+                    result
+                );
+            }
+        );
+    }
+
     bool AndOrPerceptron::terminate()
     {
         try
         {
             QLogicaeCore::Result<void> result;
 
-            setup(
+            terminate(
                 result
             );
 
@@ -167,7 +524,7 @@ namespace QLogicaeSimNapseCore
             promise = std::move(promise)]() mutable
             {
                 promise.set_value(
-                    setup()
+                    terminate()
                 );
             }
         );
@@ -189,7 +546,7 @@ namespace QLogicaeSimNapseCore
             {
                 QLogicaeCore::Result<void> result;
 
-                setup(
+                terminate(
                     result
                 );
 
@@ -211,7 +568,7 @@ namespace QLogicaeSimNapseCore
             [this, callback]() mutable
             {
                 callback(
-                    setup()
+                    terminate()
                 );
             }
         );
@@ -227,7 +584,7 @@ namespace QLogicaeSimNapseCore
             {
                 QLogicaeCore::Result<void> result;
 
-                setup(
+                terminate(
                     result
                 );
 
@@ -235,6 +592,24 @@ namespace QLogicaeSimNapseCore
                     result
                 );
             }
+        );
+    }
+
+    AndOrPerceptron& AndOrPerceptron::get_instance()
+    {
+        static AndOrPerceptron instance;
+
+        return instance;
+    }
+
+    void AndOrPerceptron::get_instance(
+        QLogicaeCore::Result<AndOrPerceptron*>& result
+    )
+    {
+        static AndOrPerceptron instance;
+
+        result.set_to_good_status_with_value(
+            &instance
         );
     }
 }

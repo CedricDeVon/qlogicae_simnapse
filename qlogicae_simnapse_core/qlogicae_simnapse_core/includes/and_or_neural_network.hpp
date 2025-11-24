@@ -1,14 +1,17 @@
 #pragma once
 
-#include "and_or_perceptron.hpp"
-#include "and_or_perceptron_activator.hpp"
 #include "and_or_neural_network_configurations.hpp"
-#include "and_or_neural_network_training_results.hpp"
-#include "and_or_neural_network_prediction_results.hpp"
 #include "and_or_perceptron_activator_configurations.hpp"
+
 #include "and_or_neural_network_training_epoch_results.hpp"
 #include "and_or_neural_network_training_configurations.hpp"
+#include "and_or_neural_network_training_results.hpp"
+
 #include "and_or_neural_network_prediction_configurations.hpp"
+#include "and_or_neural_network_prediction_results.hpp"
+
+#include "and_or_perceptron_activator.hpp"
+#include "and_or_perceptron.hpp"
 
 #include "qlogicae_core/includes/result.hpp"
 #include "qlogicae_core/includes/logger.hpp"
@@ -147,8 +150,12 @@ namespace QLogicaeSimNapseCore
         AndOrNeuralNetwork& operator = (
             const AndOrNeuralNetwork& instance
             ) = delete;
+
+        std::unordered_map<std::string, AndOrPerceptron> _models;
     };
 
-    inline static AndOrNeuralNetwork& XOR_NEURAL_NETWORK =
+    /*
+    inline static AndOrNeuralNetwork& AND_OR_NEURAL_NETWORK =
         AndOrNeuralNetwork::get_instance();
+    */
 }

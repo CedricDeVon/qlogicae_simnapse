@@ -1,7 +1,6 @@
 #pragma once
 
 #include "and_or_perceptron_activator_configurations.hpp"
-#include "and_or_neural_network_training_configurations.hpp"
 
 #include "qlogicae_core/includes/result.hpp"
 #include "qlogicae_core/includes/logger.hpp"
@@ -34,36 +33,33 @@ namespace QLogicaeSimNapseCore
 
 
 
-        bool get_activation(
+        int get_activation(
             const AndOrPerceptronActivatorConfigurations& configurations
         );
 
         void get_activation(
-            QLogicaeCore::Result<bool>& result,
+            QLogicaeCore::Result<int>& result,
             const AndOrPerceptronActivatorConfigurations& configurations
         );
 
-        std::future<bool> get_activation_async(
-            const AndOrPerceptronActivatorConfigurations& configurations
-        );
-
-        void get_activation_async(
-            const std::function<void(const bool& result)>& callback,
+        std::future<int> get_activation_async(
             const AndOrPerceptronActivatorConfigurations& configurations
         );
 
         void get_activation_async(
-            QLogicaeCore::Result<std::future<bool>>& result,
+            const std::function<void(const int& result)>& callback,
             const AndOrPerceptronActivatorConfigurations& configurations
         );
 
         void get_activation_async(
-            const std::function<void(QLogicaeCore::Result<bool>& result)>& callback,
+            QLogicaeCore::Result<std::future<int>>& result,
             const AndOrPerceptronActivatorConfigurations& configurations
         );
 
-
-
+        void get_activation_async(
+            const std::function<void(QLogicaeCore::Result<int>& result)>& callback,
+            const AndOrPerceptronActivatorConfigurations& configurations
+        );
 
         bool terminate();
 
@@ -112,7 +108,8 @@ namespace QLogicaeSimNapseCore
             const AndOrPerceptronActivator& instance
             ) = delete;
     };
-
-    inline static AndOrPerceptronActivator& XOR_MULTI_LAYERED_PERCEPTRON_ACTIVATOR =
+    /*
+    inline static AndOrPerceptronActivator& AND_OR_PERCEPTRON_ACTIVATOR =
         AndOrPerceptronActivator::get_instance();
+    */
 }

@@ -1,17 +1,13 @@
 #pragma once
 
-#include "and_or_neural_network_prediction_configurations.hpp"
-
 namespace QLogicaeSimNapseCore
 {
 	struct AndOrNeuralNetworkPredictionResults
 	{
-		bool data = 0;
+		int value = 0;
 
-		std::string timestamp_started = "";
+		double timestamp_started = 0.0;
 
-		std::string timestamp_ended = "";
-
-		AndOrNeuralNetworkPredictionConfigurations configurations = {};
+		double timestamp_ended = 0.0;
 	};
 }

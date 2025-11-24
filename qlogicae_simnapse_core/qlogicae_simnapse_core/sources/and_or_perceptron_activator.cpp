@@ -129,13 +129,13 @@ namespace QLogicaeSimNapseCore
 
 
 
-    bool AndOrPerceptronActivator::get_activation(
+    int AndOrPerceptronActivator::get_activation(
         const AndOrPerceptronActivatorConfigurations& configurations
     )
     {
         try
         {
-            QLogicaeCore::Result<bool> result;
+            QLogicaeCore::Result<int> result;
 
             get_activation(
                 result,
@@ -156,30 +156,30 @@ namespace QLogicaeSimNapseCore
     }
 
     void AndOrPerceptronActivator::get_activation(
-        QLogicaeCore::Result<bool>& result,
+        QLogicaeCore::Result<int>& result,
         const AndOrPerceptronActivatorConfigurations& configurations
     )
     {
         size_t index, size;
         size = configurations.model_weights.size();
-        double sum_result = configurations.model_bias;
+        double sum = configurations.model_bias;
         for (index = 0; index < size; ++index)
         {
-            sum_result +=
+            sum +=
                 configurations.model_weights[index] *
                 configurations.inputs[index];
         }
 
         result.set_to_good_status_with_value(
-            sum_result >= 0
+            sum >= 0
         );
     }
 
-    std::future<bool> AndOrPerceptronActivator::get_activation_async(
+    std::future<int> AndOrPerceptronActivator::get_activation_async(
         const AndOrPerceptronActivatorConfigurations& configurations
     )
     {
-        std::promise<bool> promise;
+        std::promise<int> promise;
         auto future = promise.get_future();
 
         boost::asio::post(
@@ -199,11 +199,11 @@ namespace QLogicaeSimNapseCore
     }
 
     void AndOrPerceptronActivator::get_activation_async(
-        QLogicaeCore::Result<std::future<bool>>& result,
+        QLogicaeCore::Result<std::future<int>>& result,
         const AndOrPerceptronActivatorConfigurations& configurations
     )
     {
-        std::promise<bool> promise;
+        std::promise<int> promise;
         auto future = promise.get_future();
 
         boost::asio::post(
@@ -211,7 +211,7 @@ namespace QLogicaeSimNapseCore
             [this, configurations,
             promise = std::move(promise)]() mutable
             {
-                QLogicaeCore::Result<bool> result;
+                QLogicaeCore::Result<int> result;
 
                 get_activation(
                     result,
@@ -230,7 +230,7 @@ namespace QLogicaeSimNapseCore
     }
 
     void AndOrPerceptronActivator::get_activation_async(
-        const std::function<void(const bool& result)>& callback,
+        const std::function<void(const int& result)>& callback,
         const AndOrPerceptronActivatorConfigurations& configurations
     )
     {
@@ -248,7 +248,7 @@ namespace QLogicaeSimNapseCore
     }
 
     void AndOrPerceptronActivator::get_activation_async(
-        const std::function<void(QLogicaeCore::Result<bool>& result)>& callback,
+        const std::function<void(QLogicaeCore::Result<int>& result)>& callback,
         const AndOrPerceptronActivatorConfigurations& configurations
     )
     {
@@ -256,7 +256,7 @@ namespace QLogicaeSimNapseCore
             QLogicaeCore::UTILITIES.BOOST_ASIO_POOL,
             [this, configurations, callback]() mutable
             {
-                QLogicaeCore::Result<bool> result;
+                QLogicaeCore::Result<int> result;
 
                 get_activation(
                     result,
@@ -277,7 +277,7 @@ namespace QLogicaeSimNapseCore
         {
             QLogicaeCore::Result<void> result;
 
-            setup(
+            terminate(
                 result
             );
 
@@ -312,7 +312,7 @@ namespace QLogicaeSimNapseCore
             promise = std::move(promise)]() mutable
             {
                 promise.set_value(
-                    setup()
+                    terminate()
                 );
             }
         );
@@ -334,7 +334,7 @@ namespace QLogicaeSimNapseCore
             {
                 QLogicaeCore::Result<void> result;
 
-                setup(
+                terminate(
                     result
                 );
 
@@ -356,7 +356,7 @@ namespace QLogicaeSimNapseCore
             [this, callback]() mutable
             {
                 callback(
-                    setup()
+                    terminate()
                 );
             }
         );
@@ -372,7 +372,7 @@ namespace QLogicaeSimNapseCore
             {
                 QLogicaeCore::Result<void> result;
 
-                setup(
+                terminate(
                     result
                 );
 
@@ -380,6 +380,24 @@ namespace QLogicaeSimNapseCore
                     result
                 );
             }
+        );
+    }
+
+    AndOrPerceptronActivator& AndOrPerceptronActivator::get_instance()
+    {
+        static AndOrPerceptronActivator instance;
+
+        return instance;
+    }
+
+    void AndOrPerceptronActivator::get_instance(
+        QLogicaeCore::Result<AndOrPerceptronActivator*>& result
+    )
+    {
+        static AndOrPerceptronActivator instance;
+
+        result.set_to_good_status_with_value(
+            &instance
         );
     }
 }

@@ -1,25 +1,21 @@
 #pragma once
 
-#include "and_or_neural_network_training_configurations.hpp"
-
 namespace QLogicaeSimNapseCore
 {
 	struct AndOrNeuralNetworkTrainingEpochResults
 	{
 		size_t current_epoch = 0;
 
-		double bias = 0;
+		double bias = 0.0;
 
-		double sum = 0;
+		std::vector<int> predictions = { 0, 0 };
 
-		double pred = 0;
+		std::vector<int> errors = { 0, 0 };
 
-		double error = 0;
+		std::vector<double> model_weights = { 0.0, 0.0 };
 
-		std::vector<double> weights = {};
+		double timestamp_started = 0.0;
 
-		std::string timestamp_started = "";
-
-		std::string timestamp_ended = "";
+		double timestamp_ended = 0.0;
 	};
 }

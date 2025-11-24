@@ -4,7 +4,7 @@ namespace QLogicaeSimNapseCore
 {
 	struct AndOrPerceptronActivatorConfigurations
 	{		
-		std::vector<bool> inputs = {};
+		std::vector<int> inputs = {};
 
 		std::vector<double> model_weights = {};
 
