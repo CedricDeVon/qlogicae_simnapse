@@ -243,7 +243,7 @@ xcopy "%QT_DIR%\plugins\platforms\qwindows.dll" "%OUT_DIR%\platforms\" /Y /F</Co
       <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
     </ClCompile>
     <ClCompile Include="qlogicae_simnapse\sources\utilities.cpp" />
-    <QtRcc Include="qlogicae_simnapse\qt\application.qrc" />
+    <QtRcc Include="application.qrc" />
     <QtUic Include="qlogicae_simnapse\qt\about.ui" />
     <QtUic Include="qlogicae_simnapse\qt\application.ui" />
     <QtMoc Include="qlogicae_simnapse\includes\application.hpp" />

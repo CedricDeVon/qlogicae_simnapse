@@ -23,7 +23,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="qlogicae_simnapse\qt\application.qrc">
+    <QtRcc Include="application.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
     <QtUic Include="qlogicae_simnapse\qt\application.ui">
@@ -103,6 +103,46 @@
     <None Include="qlogicae_simnapse\assembly\x64_masm__main.asm">
       <Filter>Source Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="qlogicae_simnapse\includes\loading.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="qlogicae_simnapse\includes\splash.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="qlogicae_simnapse\includes\main_menu.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="qlogicae_simnapse\includes\about.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="qlogicae_simnapse\includes\settings.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="qlogicae_simnapse\includes\evaluation.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="qlogicae_simnapse\qt\loading.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="qlogicae_simnapse\qt\splash.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="qlogicae_simnapse\qt\main_menu.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="qlogicae_simnapse\qt\about.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="qlogicae_simnapse\qt\settings.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="qlogicae_simnapse\qt\evaluation.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <Font Include="qlogicae\application\assets\fonts\Inter\static\Inter_18pt-Bold.ttf" />
@@ -245,45 +285,5 @@
     <Image Include="qlogicae\application\assets\qt.png">
       <Filter>Resource Files</Filter>
     </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="qlogicae_simnapse\includes\loading.hpp">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="qlogicae_simnapse\includes\splash.hpp">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="qlogicae_simnapse\includes\main_menu.hpp">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="qlogicae_simnapse\includes\about.hpp">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="qlogicae_simnapse\includes\settings.hpp">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="qlogicae_simnapse\includes\evaluation.hpp">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="qlogicae_simnapse\qt\loading.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="qlogicae_simnapse\qt\splash.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="qlogicae_simnapse\qt\main_menu.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="qlogicae_simnapse\qt\about.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="qlogicae_simnapse\qt\settings.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="qlogicae_simnapse\qt\evaluation.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
   </ItemGroup>
 </Project>

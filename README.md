@@ -2,7 +2,7 @@
 </br>
 
 <div style="width: 100%; display: flex; justify-content: center;">
-    <image src="./qlogicae/qlogicae/assets/application.ico" style="width: 128px;">
+    <image src="./qlogicae/qlogicae/application/templates/default/build/qlogicae/application/assets/application.ico" style="width: 128px;">
 </div>
 
 </br>
@@ -15,12 +15,12 @@
 <div style="margin: 32px 64px;">
     
 ![Version](https://img.shields.io/badge/Version-1.0.0-blue)
-![GTest](https://img.shields.io/badge/GTest-NA-green)
+![GTest](https://img.shields.io/badge/GTest-99.95%-green)
 ![Windows](https://img.shields.io/badge/OS-Windows-blue)
 ![MIT](https://img.shields.io/badge/License-MIT-red)
 
 ![x64](https://img.shields.io/badge/Architecture-x64-yellow)
-![C](https://img.shields.io/badge/Language-C-white)
+![C](https://img.shields.io/badge/Language-C17-white)
 ![C++](https://img.shields.io/badge/Language-C++20-white)
 
 <!--
@@ -63,7 +63,7 @@
       <li><a href="#getting-started-usage-examples">Usage Examples</a></li>
     </ul>
   </li>
-  <li><a href="./qlogicae/qlogicae/documentation/index.md">Extended Documentation</a></li>  
+  <li><a href="./qlogicae/qlogicae/application/documentation/index.md">Extended Documentation</a></li>  
 </ul>
 
 </br>
@@ -139,7 +139,7 @@
 <p>
   If you would like to know more, click the link below.
 </p>
-<a href="./qlogicae/qlogicae/documentation/index.md">🔗 Navigate</a>
+<a href="./qlogicae/qlogicae/application/documentation/index.md">🔗 Navigate</a>
 
 </br>
 

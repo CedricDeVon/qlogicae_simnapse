@@ -107,7 +107,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="application.qrc">:/qlogicae/qlogicae/application/assets/application.png</pixmap>
+            <pixmap resource="../../application.qrc">:/qlogicae/qlogicae/application/assets/application.ico</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -281,7 +281,7 @@ QPushButton:pressed {
                <string/>
               </property>
               <property name="icon">
-               <iconset resource="application.qrc">
+               <iconset resource="../../application.qrc">
                 <normaloff>:/qlogicae/qlogicae/application/assets/icons/aiAssistantToolWindow_dark.png</normaloff>:/qlogicae/qlogicae/application/assets/icons/aiAssistantToolWindow_dark.png</iconset>
               </property>
               <property name="iconSize">
@@ -340,7 +340,7 @@ QPushButton:pressed {
                <string/>
               </property>
               <property name="icon">
-               <iconset resource="application.qrc">
+               <iconset resource="../../application.qrc">
                 <normaloff>:/qlogicae/qlogicae/application/assets/icons/settings_dark.png</normaloff>:/qlogicae/qlogicae/application/assets/icons/settings_dark.png</iconset>
               </property>
               <property name="iconSize">
@@ -399,7 +399,7 @@ QPushButton:pressed {
                <string/>
               </property>
               <property name="icon">
-               <iconset resource="application.qrc">
+               <iconset resource="../../application.qrc">
                 <normaloff>:/qlogicae/qlogicae/application/assets/icons/errorOutline_dark.png</normaloff>:/qlogicae/qlogicae/application/assets/icons/errorOutline_dark.png</iconset>
               </property>
               <property name="iconSize">
@@ -715,6 +715,7 @@ QPushButton:pressed {
  <layoutdefault spacing="6" margin="11"/>
  <resources>
   <include location="application.qrc"/>
+  <include location="../../application.qrc"/>
  </resources>
  <connections/>
 </ui>
