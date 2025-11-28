@@ -1,5 +1,18 @@
 #pragma once
 
+#include <absl/strings/str_cat.h>
+
+#include <boost/asio.hpp>
+#include <boost/asio/ip/icmp.hpp>
+#include <boost/asio/steady_timer.hpp>
+#include <boost/container/flat_map.hpp>
+#include <boost/interprocess/containers/map.hpp>
+#include <boost/interprocess/containers/string.hpp>
+#include <boost/interprocess/containers/vector.hpp>
+#include <boost/interprocess/managed_mapped_file.hpp>
+#include <boost/interprocess/allocators/allocator.hpp>
+#include <boost/interprocess/managed_shared_memory.hpp>
+
 #include <QFont>
 #include <QFile>
 #include <QIcon>

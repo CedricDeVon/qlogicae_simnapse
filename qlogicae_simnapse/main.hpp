@@ -1,5 +1,6 @@
 #pragma once
 
+#include "qlogicae_simnapse/includes/utilities.hpp"
 #include "qlogicae_simnapse/includes/application.hpp"
 
 #include "qlogicae_simnapse_core/includes/all.hpp"

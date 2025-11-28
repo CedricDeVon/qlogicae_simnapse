@@ -113,7 +113,7 @@
             <string notr="true">color: #EBECF0;</string>
            </property>
            <property name="text">
-            <string>Boolean Perceptron</string>
+            <string>SL Perceptron</string>
            </property>
           </widget>
          </item>
@@ -252,10 +252,13 @@
                   </property>
                   <item alignment="Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop">
                    <widget class="QSpinBox" name="spinBox_2">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>32</width>
-                      <height>0</height>
+                      <height>24</height>
                      </size>
                     </property>
                     <property name="styleSheet">
@@ -304,8 +307,11 @@ QSpinBox:focus {
 }
 </string>
                     </property>
+                    <property name="readOnly">
+                     <bool>true</bool>
+                    </property>
                     <property name="minimum">
-                     <number>0</number>
+                     <number>1</number>
                     </property>
                     <property name="maximum">
                      <number>1000000000</number>
@@ -350,6 +356,9 @@ QSpinBox:focus {
                </item>
                <item alignment="Qt::AlignmentFlag::AlignVCenter">
                 <widget class="QSlider" name="horizontalSlider">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
@@ -388,6 +397,9 @@ QSlider::add-page:horizontal {
     border-radius: 2px;
 }</string>
                  </property>
+                 <property name="minimum">
+                  <number>1</number>
+                 </property>
                  <property name="maximum">
                   <number>100</number>
                  </property>
@@ -395,7 +407,7 @@ QSlider::add-page:horizontal {
                   <number>100</number>
                  </property>
                  <property name="value">
-                  <number>0</number>
+                  <number>1</number>
                  </property>
                  <property name="orientation">
                   <enum>Qt::Orientation::Horizontal</enum>
@@ -505,10 +517,13 @@ QSpinBox:focus {
 </string>
                     </property>
                     <property name="minimum">
-                     <number>100</number>
+                     <number>1</number>
                     </property>
                     <property name="maximum">
                      <number>1000000000</number>
+                    </property>
+                    <property name="value">
+                     <number>10</number>
                     </property>
                    </widget>
                   </item>
@@ -618,21 +633,21 @@ QPushButton:pressed {
               </property>
               <property name="styleSheet">
                <string notr="true">QTableWidget {
-    background-color: transparent;
+    background: transparent;
     gridline-color: #4E5157;
+    color: white;
 }
 
 QTableWidget::item:selected {
-    background-color: transparent;
-    color: #4E5157;
+    color: white;
 }
 
 QTableWidget::item:hover {
-    background-color: transparent;
+    color: white;
 }
 
 QHeaderView::section {
-    background-color: transparent;
+    background: transparent;
     padding: 4px;
     font-weight: bold;
     border: 1px solid #4E5157;
@@ -662,7 +677,7 @@ QTableWidget QScrollBar::sub-line:vertical {
 
 QTableWidget QScrollBar::add-page:vertical,
 QTableWidget QScrollBar::sub-page:vertical {
-    background: none;
+    background: transparent;
 }
 
 QTableWidget QScrollBar:horizontal {
@@ -689,9 +704,21 @@ QTableWidget QScrollBar::sub-line:horizontal {
 
 QTableWidget QScrollBar::add-page:horizontal,
 QTableWidget QScrollBar::sub-page:horizontal {
-    background: none;
+    background: transparent;
 }
 </string>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::EditTrigger::AllEditTriggers</set>
+              </property>
+              <property name="tabKeyNavigation">
+               <bool>true</bool>
+              </property>
+              <property name="showDropIndicator" stdset="0">
+               <bool>true</bool>
+              </property>
+              <property name="selectionMode">
+               <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
               </property>
               <property name="gridStyle">
                <enum>Qt::PenStyle::SolidLine</enum>
@@ -800,15 +827,24 @@ QTableWidget QScrollBar::sub-page:horizontal {
                <property name="text">
                 <string>0</string>
                </property>
+               <property name="flags">
+                <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+               </property>
               </item>
               <item row="0" column="4">
                <property name="text">
                 <string>0</string>
                </property>
+               <property name="flags">
+                <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+               </property>
               </item>
               <item row="0" column="5">
                <property name="text">
                 <string>0</string>
+               </property>
+               <property name="flags">
+                <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
               <item row="1" column="0">
@@ -830,15 +866,24 @@ QTableWidget QScrollBar::sub-page:horizontal {
                <property name="text">
                 <string>0</string>
                </property>
+               <property name="flags">
+                <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+               </property>
               </item>
               <item row="1" column="4">
                <property name="text">
                 <string>0</string>
                </property>
+               <property name="flags">
+                <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+               </property>
               </item>
               <item row="1" column="5">
                <property name="text">
                 <string>0</string>
+               </property>
+               <property name="flags">
+                <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
               <item row="2" column="0">
@@ -860,15 +905,24 @@ QTableWidget QScrollBar::sub-page:horizontal {
                <property name="text">
                 <string>0</string>
                </property>
+               <property name="flags">
+                <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+               </property>
               </item>
               <item row="2" column="4">
                <property name="text">
                 <string>0</string>
                </property>
+               <property name="flags">
+                <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+               </property>
               </item>
               <item row="2" column="5">
                <property name="text">
                 <string>0</string>
+               </property>
+               <property name="flags">
+                <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
               <item row="3" column="0">
@@ -890,15 +944,24 @@ QTableWidget QScrollBar::sub-page:horizontal {
                <property name="text">
                 <string>0</string>
                </property>
+               <property name="flags">
+                <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+               </property>
               </item>
               <item row="3" column="4">
                <property name="text">
                 <string>0</string>
                </property>
+               <property name="flags">
+                <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+               </property>
               </item>
               <item row="3" column="5">
                <property name="text">
                 <string>0</string>
+               </property>
+               <property name="flags">
+                <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
              </widget>
@@ -962,7 +1025,7 @@ QTableWidget QScrollBar::sub-page:horizontal {
                      <string notr="true">color: #9DA0A8</string>
                     </property>
                     <property name="text">
-                     <string> 0.00</string>
+                     <string>0.00</string>
                     </property>
                     <property name="indent">
                      <number>0</number>
@@ -1034,6 +1097,9 @@ QTableWidget QScrollBar::sub-page:horizontal {
                </item>
                <item alignment="Qt::AlignmentFlag::AlignRight">
                 <widget class="QPushButton" name="pushButton_11">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
                  <property name="minimumSize">
                   <size>
                    <width>80</width>

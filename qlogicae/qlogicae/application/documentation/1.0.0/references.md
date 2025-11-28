@@ -5,6 +5,14 @@
 
 </br>
 
+<p>
+    Below is a list of references, in order to pay respects to the developers, authors, researchers, and many others that make this project a reality:
+</p>
 
-
-<p>Under Revision</p>
+<ul>
+    <li>
+        <p>
+            .
+        </p>
+    </li>
+</ul>

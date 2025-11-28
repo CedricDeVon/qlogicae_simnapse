@@ -8,6 +8,7 @@ int main(
 )
 {
     QLogicaeCore::QLOGICAE_APPLICATION.setup();
+    QLogicaeSimNapse::UTILITIES.setup();
 
     QApplication app(argc, argv);
 

@@ -49,18 +49,12 @@
   <ul>
     <li><a href="./collaboration.md">General Guidelines</a></li>
     <li><a href="./collaboration.md">Issues</a></li>
-    <li><a href="./collaboration.md">Discussions</a></li>
-    <li><a href="./collaboration.md">Roadmap</a></li>
     <li><a href="./collaboration.md">Contributors</a></li>
-    <li><a href="./collaboration.md">Sponsors</a></li>
-    <li><a href="./collaboration.md">Backers</a></li>
-    <li><a href="./collaboration.md">Questions and Answers (QnA)</a></li>
-    <li><a href="./collaboration.md">Notable Dependent Projects</a></li>                
+    <li><a href="./collaboration.md">Questions and Answers (QnA)</a></li>           
   </ul>
   <li><a href="./legalities.md">Legalities</a></li>
   <ul>
-    <li><a href="./legalities.md">Licensing</a></li>
-    <li><a href="./legalities.md">Copyright</a></li>  
+    <li><a href="./legalities.md">Licensing</a></li> 
   </ul>    
   <li><a href="./references.md">References</a></li>
 </ul>

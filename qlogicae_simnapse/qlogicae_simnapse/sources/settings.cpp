@@ -1,6 +1,7 @@
 #include "pch.hpp"
 
 #include "../includes/settings.hpp"
+#include "../includes/utilities.hpp"
 
 namespace QLogicaeSimNapse
 {
@@ -21,7 +22,7 @@ namespace QLogicaeSimNapse
 	void Settings::_setup_widgets()
 	{
 		_ui->comboBox_2->setCurrentIndex(
-			1 // QLogicaeRulexCore::UTILITIES.APPLICATION_SETTINGS_CACHE_SCREEN_TYPE
+			QLogicaeSimNapse::UTILITIES.DEFAULT_SETTINGS_SCREEN_TYPE
 		);
 		
 		connect(

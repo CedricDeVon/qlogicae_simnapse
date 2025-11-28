@@ -5,6 +5,8 @@
 
 </br>
 
+<h2>Licensing</h2>
 
-
-<p>Under Revision</p>
+<p>
+    This application is currently under the M.I.T. license. In other words, feel free to fork, copy and use the source code if you would like! Just remember to reference my work, that's all I ask.
+</p>

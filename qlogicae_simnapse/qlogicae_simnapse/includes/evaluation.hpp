@@ -2,6 +2,8 @@
 
 #include "ui_evaluation.h"
 
+#include "utilities.hpp"
+
 namespace Ui
 {
 	class EvaluationClass;

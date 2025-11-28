@@ -11,11 +11,11 @@
 
 <div style="text-align: center;">
   <h1>QLogicae SimNapse</h1>
-  <p style="font-style: italic;">A C++, Windows, Machine-Learning, Perceptron, Neural-Networks, Desktop Simulation</p>
+  <p style="font-style: italic;">Learning bits, like us</p>
 <div style="margin: 32px 64px;">
     
 ![Version](https://img.shields.io/badge/Version-1.0.0-blue)
-![GTest](https://img.shields.io/badge/GTest-99.95%-green)
+![GTest](https://img.shields.io/badge/GTest-Passing-green)
 ![Windows](https://img.shields.io/badge/OS-Windows-blue)
 ![MIT](https://img.shields.io/badge/License-MIT-red)
 
@@ -39,6 +39,12 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Visit-blue)](https://linkedin.com/in/sample)
 [![Slack](https://img.shields.io/badge/Slack-Visit-green?logo=slack)](https://sample.slack.com)
 [![Website](https://img.shields.io/badge/Website-Visit-white)](https://sample.com)
+
+
+[Overview description. Describe its main purpose, motivation for development, target audience, etc.]
+
+[Describe Operating Systems, System Architecture, Runtime, Programming Language Version, Package Manager, Compiler, Build Tools, Database Systems, Environment Tools, Package Dependencies, Network Access, RAM, Permissions]
+
 -->
   </div>
 </div>
@@ -77,16 +83,29 @@
   🧾 Description
 </h3>
 <p>
-  [Overview description. Describe its main purpose, motivation for development, target audience, etc.]
+  <strong>QLogicae SimNapse</strong> is 
+a Boolean, Single Perceptron simulation software. 
 </p>
 <h3 id="about-core-features">
   ⚙️ Core Features
 </h3>
 <ul>
   <li>
-    <h3>[Feature name]</h3>
+    <h3>Customizable Input and Output Parameters</h3>
     <ul>
-      <li><p>[Feature overview description]</p></li>
+      <li><p>Teaching a model to evaluate AND and OR operations may not be enough. Here, you can teach it XOR and much more!</p></li>
+    </ul>
+  </li>
+  <li>
+    <h3>Real-Time Learning</h3>
+    <ul>
+      <li><p>The ability to set learning parameters and watch it improve its accuracy, in real-time.</p></li>
+    </ul>
+  </li>
+  <li>
+    <h3>Evaluation History</h3>
+    <ul>
+      <li><p>Assessing just the final accuracy may be lacking - you can also view the learning results through time, from the first and last iteration.</p></li>
     </ul>
   </li>
 </ul>
@@ -99,37 +118,30 @@
   🚀 Getting Started
 </h2>
 <h3 id="getting-started-pre-requisites">
-  📋 Pre-requisites
+  📋 Usage Pre-requisites
 </h3>
 <p>
-  [Describe Operating Systems, System Architecture, Runtime, Programming Language Version, Package Manager, Compiler, Build Tools, Database Systems, Environment Tools, Package Dependencies, Network Access, RAM, Permissions]
+  In order to use this application with as little issue as possible, please assess your system if it meets or exceedes the following requirements:
 </p>
+
+<ul>
+  <li>
+    <p>Operating System - Windows</p>
+  </li>
+  <li>
+    <p>RAM - At least 1 GB</p>
+  </li>
+  <li>
+    <p>Storage - At least 70 MB</p>
+  </li>
+</ul>
+
 <h3 id="getting-started-releases">
   🏷️ Releases
 </h3>
 <p>
-  [Include Binaries, Sources, etc.]
+  You can find a list of application releases at your right - the 'Release' section.
 </p>
-<h3 id="getting-started-installation">
-  📥 Installation
-</h3>
-<p>
-  [Description]
-</p>
-<h3 id="getting-started-setup">
-  🛠️ Setup
-</h3>
-<p>
-  [Description]
-</p>
-<h3 id="getting-started-usage-examples">
-  💡 Usage Examples
-</h3>
-<p>
-  [Description]
-</p>
-
-</br>
 
 
 
