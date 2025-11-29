@@ -80,28 +80,22 @@ namespace QLogicaeSimNapse
 			{
 				_ui->spinBox_2->setValue(
 					static_cast<int>(result.current_epoch)
-				);								
+				);
 			};
 
 		connect(
-			_ui->horizontalSlider, // Slider
+			_ui->horizontalSlider, 
 			&QSlider::valueChanged,
 			this,
 			[this](int value)
 			{
-				_ui->spinBox->setDisabled(true);
-				_ui->spinBox_2->setDisabled(true);
-				_ui->tableWidget->setDisabled(true);
-				_ui->pushButton_10->setDisabled(true);
-				_ui->pushButton_11->setDisabled(true);
-				
 				QLogicaeSimNapseCore::AndOrNeuralNetworkTrainingEpochResults epoch_results =
 					QLogicaeSimNapse::UTILITIES.NEURAL_NETWORK_TRAINING_RESULTS.epoch_results[value - 1];
 
 				_ui->spinBox_2->setValue(
 					value
 				);
-				
+
 				int k;
 				for (k = 0; k < 4; ++k)
 				{
@@ -137,12 +131,7 @@ namespace QLogicaeSimNapse
 							errors
 						)
 					)
-				);
-
-				_ui->spinBox->setDisabled(false);
-				_ui->tableWidget->setDisabled(false);
-				_ui->pushButton_10->setDisabled(false);
-				_ui->pushButton_11->setDisabled(false);
+				);				
 			}
 		);
 
@@ -224,7 +213,7 @@ namespace QLogicaeSimNapse
 		);
 
 		connect(
-			_ui->pushButton_10, // Learn
+			_ui->pushButton_10, 
 			&QPushButton::clicked,
 			this,
 			[this]()
@@ -256,7 +245,7 @@ namespace QLogicaeSimNapse
 		);
 
 		connect(
-			_ui->pushButton_11, // Reset
+			_ui->pushButton_11, 
 			&QPushButton::clicked,
 			this,
 			[this]()
