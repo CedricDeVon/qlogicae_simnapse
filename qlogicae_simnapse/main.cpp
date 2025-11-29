@@ -15,7 +15,10 @@ int main(
     QLogicaeSimNapse::Application window;
     window.show();
     
-    return app.exec();
+    bool exit_code = app.exec();
+    QLogicaeCore::QLOGICAE_APPLICATION.terminate();
+
+    return exit_code;
 }
 
 namespace QLogicaeSimNapse

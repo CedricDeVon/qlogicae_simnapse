@@ -3,7 +3,7 @@
 #include "main.hpp"
 
 int main(int argc, char** argv)
-{    
+{       
     QLogicaeSimNapseCore::AndOrNeuralNetworkTrainingConfigurations and_training_configurations =
     {
         .name = "&&",

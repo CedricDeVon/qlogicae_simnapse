@@ -25,27 +25,26 @@ namespace QLogicaeSimNapse
     {
         this->setWindowIcon(
             QIcon(
-                QString::fromStdString(
-                    ":/qlogicae/../../qlogicae/application/assets/application.ico"
-                )
+                UTILITIES.DEFAULT_WINDOW_ICON_RESOURCE_LINK
             )
         );
         this->setWindowTitle(
             QString::fromStdString(
-                "QLogicae SimNapse"
-            )
-        );
-        _change_screen_type(
-            UTILITIES.DEFAULT_SETTINGS_SCREEN_TYPE_VALUE
+                QLogicaeCore::QLOGICAE_APPLICATION_UTILITIES.CONFIGURATIONS_APPLICATION_NAME
+            )            
+        );        
+
+        _change_screen_type(            
+            (QLogicaeCore::ROCKSDB_DATABASE.is_key_found(UTILITIES.DEFAULT_SETTINGS_SCREEN_TYPE_KEY)) ?
+                QLogicaeCore::ROCKSDB_DATABASE.get_value<int>(UTILITIES.DEFAULT_SETTINGS_SCREEN_TYPE_KEY) :
+                UTILITIES.DEFAULT_SETTINGS_SCREEN_TYPE_VALUE
         );
     }
 
     void Application::_setup_assets()
     {
         int font_id = QFontDatabase::addApplicationFont(
-            QString::fromStdString(
-                ":/qlogicae/../../qlogicae/application/assets/fonts/Inter/static/Inter_18pt-Regular.ttf"
-            )
+            UTILITIES.DEFAULT_FONT_RESOURCE_LINK
         );
         if (font_id != -1)
         {
@@ -53,13 +52,7 @@ namespace QLogicaeSimNapse
             if (!families.isEmpty())
             {
                 QString fontName = families.at(0);
-                QString style = QString::fromStdString(
-                    R"(
-                        QWidget {
-                            font-family: "%1";
-                        }
-                    )"
-                ).arg(fontName);
+                QString style = UTILITIES.DEFAULT_WIDGET_STYLE.arg(fontName);
 
                 qApp->setStyleSheet(style);
             }

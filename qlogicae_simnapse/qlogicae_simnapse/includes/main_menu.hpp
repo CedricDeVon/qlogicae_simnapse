@@ -2,6 +2,7 @@
 
 #include "about.hpp"
 #include "settings.hpp"
+#include "utilities.hpp"
 #include "evaluation.hpp"
 
 #include "ui_main_menu.h"

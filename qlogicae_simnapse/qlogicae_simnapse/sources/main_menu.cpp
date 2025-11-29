@@ -65,34 +65,13 @@ namespace QLogicaeSimNapse
 		if (_current_active_left_side_button != clicked_button)
 		{
 			_current_active_left_side_button->setStyleSheet(
-				QString::fromStdString(
-					"QPushButton {"
-					"background: #2B2D30;"
-					"border-radius: 4px;"
-					"}"
-					"QPushButton:hover {"
-					"background: #4E5157;"
-					"}"
-					"QPushButton:pressed {"
-					"background: #2B2D30;"
-					"}"
-				)
+				UTILITIES.DEFAULT_PUSH_BUTTON_WIDGET_STYLE_NORMAL
 			);
+			
 			clicked_button->setStyleSheet(
-				QString::fromStdString(
-					"QPushButton {"
-					"background: #3574F0;"
-					"border: 2px solid transparent;"
-					"border-radius: 4px;"
-					"}"
-					"QPushButton:hover {"
-					"background: #366ACF;"
-					"}"
-					"QPushButton:pressed {"
-					"	background: #375FAD;"
-					"}"
-				)
+				UTILITIES.DEFAULT_PUSH_BUTTON_WIDGET_STYLE_CLICKED
 			);
+
 			_current_active_left_side_button = clicked_button;
 			_ui->stackedWidget->setCurrentWidget(widget);
 			_ui->label_2->setText(widget->windowTitle());

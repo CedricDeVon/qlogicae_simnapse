@@ -339,8 +339,8 @@ QComboBox QAbstractItemView QScrollBar::sub-page:vertical {
                    <string>Normal</string>
                   </property>
                   <property name="icon">
-                   <iconset>
-                    <normaloff>../../../../qlogicae_cogita/qlogicae_cogita/qlogicae/qlogicae/application/assets/icons/restore_dark.png</normaloff>../../../../qlogicae_cogita/qlogicae_cogita/qlogicae/qlogicae/application/assets/icons/restore_dark.png</iconset>
+                   <iconset resource="../../application.qrc">
+                    <normaloff>:/qlogicae/qlogicae/application/assets/icons/restore_dark.png</normaloff>:/qlogicae/qlogicae/application/assets/icons/restore_dark.png</iconset>
                   </property>
                  </item>
                  <item>
@@ -348,8 +348,8 @@ QComboBox QAbstractItemView QScrollBar::sub-page:vertical {
                    <string>Fullscreen</string>
                   </property>
                   <property name="icon">
-                   <iconset>
-                    <normaloff>../../../../qlogicae_cogita/qlogicae_cogita/qlogicae/qlogicae/application/assets/icons/desktop_dark.png</normaloff>../../../../qlogicae_cogita/qlogicae_cogita/qlogicae/qlogicae/application/assets/icons/desktop_dark.png</iconset>
+                   <iconset resource="../../application.qrc">
+                    <normaloff>:/qlogicae/qlogicae/application/assets/icons/desktop_dark.png</normaloff>:/qlogicae/qlogicae/application/assets/icons/desktop_dark.png</iconset>
                   </property>
                  </item>
                  <item>
@@ -357,8 +357,8 @@ QComboBox QAbstractItemView QScrollBar::sub-page:vertical {
                    <string>Minimize</string>
                   </property>
                   <property name="icon">
-                   <iconset>
-                    <normaloff>../../../../qlogicae_cogita/qlogicae_cogita/qlogicae/qlogicae/application/assets/icons/minimize_dark.png</normaloff>../../../../qlogicae_cogita/qlogicae_cogita/qlogicae/qlogicae/application/assets/icons/minimize_dark.png</iconset>
+                   <iconset resource="../../application.qrc">
+                    <normaloff>:/qlogicae/qlogicae/application/assets/icons/minimize_dark.png</normaloff>:/qlogicae/qlogicae/application/assets/icons/minimize_dark.png</iconset>
                   </property>
                  </item>
                  <item>
@@ -366,8 +366,8 @@ QComboBox QAbstractItemView QScrollBar::sub-page:vertical {
                    <string>Maximize</string>
                   </property>
                   <property name="icon">
-                   <iconset>
-                    <normaloff>../../../../qlogicae_cogita/qlogicae_cogita/qlogicae/qlogicae/application/assets/icons/maximize_dark.png</normaloff>../../../../qlogicae_cogita/qlogicae_cogita/qlogicae/qlogicae/application/assets/icons/maximize_dark.png</iconset>
+                   <iconset resource="../../application.qrc">
+                    <normaloff>:/qlogicae/qlogicae/application/assets/icons/maximize_dark.png</normaloff>:/qlogicae/qlogicae/application/assets/icons/maximize_dark.png</iconset>
                   </property>
                  </item>
                 </widget>
@@ -453,6 +453,8 @@ QComboBox QAbstractItemView QScrollBar::sub-page:vertical {
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="../../application.qrc"/>
+ </resources>
  <connections/>
 </ui>

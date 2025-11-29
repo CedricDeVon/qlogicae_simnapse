@@ -1,7 +1,6 @@
 #include "pch.hpp"
 
 #include "../includes/settings.hpp"
-#include "../includes/utilities.hpp"
 
 namespace QLogicaeSimNapse
 {
@@ -22,7 +21,9 @@ namespace QLogicaeSimNapse
 	void Settings::_setup_widgets()
 	{
 		_ui->comboBox_2->setCurrentIndex(
-			UTILITIES.DEFAULT_SETTINGS_SCREEN_TYPE_VALUE
+			(QLogicaeCore::ROCKSDB_DATABASE.is_key_found(UTILITIES.DEFAULT_SETTINGS_SCREEN_TYPE_KEY)) ?
+				QLogicaeCore::ROCKSDB_DATABASE.get_value<int>(UTILITIES.DEFAULT_SETTINGS_SCREEN_TYPE_KEY) :
+				UTILITIES.DEFAULT_SETTINGS_SCREEN_TYPE_VALUE
 		);
 		
 		connect(
@@ -31,6 +32,13 @@ namespace QLogicaeSimNapse
 			this, [this](int index)
 			{
 				emit on_screen_type_changed(index);
+
+				QLogicaeCore::ROCKSDB_DATABASE.begin_batch();
+				QLogicaeCore::ROCKSDB_DATABASE.batch_set_value<int>(
+					UTILITIES.DEFAULT_SETTINGS_SCREEN_TYPE_KEY,
+					index
+				);
+				QLogicaeCore::ROCKSDB_DATABASE.batch_execute();
 			}
 		);
 	}

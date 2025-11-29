@@ -83,6 +83,44 @@ namespace QLogicaeSimNapse
         DEFAULT_EVALUATION_LEARNING_RATE =
             1.5;
 
+        DEFAULT_WINDOW_ICON_RESOURCE_LINK =
+            ":/qlogicae/application/assets/application.ico";
+
+        DEFAULT_FONT_RESOURCE_LINK =
+            ":/qlogicae/application/assets/fonts/Inter/static/Inter_18pt-Regular.ttf";
+
+        DEFAULT_WIDGET_STYLE =
+            R"(
+                QWidget {
+                    font-family: "%1";
+                }
+            )";
+
+        DEFAULT_PUSH_BUTTON_WIDGET_STYLE_NORMAL =
+            "QPushButton {"
+            "background: #2B2D30;"
+            "border-radius: 4px;"
+            "}"
+            "QPushButton:hover {"
+            "background: #4E5157;"
+            "}"
+            "QPushButton:pressed {"
+            "background: #2B2D30;"
+            "}";
+
+        DEFAULT_PUSH_BUTTON_WIDGET_STYLE_CLICKED =
+            "QPushButton {"
+            "background: #3574F0;"
+            "border: 2px solid transparent;"
+            "border-radius: 4px;"
+            "}"
+            "QPushButton:hover {"
+            "background: #366ACF;"
+            "}"
+            "QPushButton:pressed {"
+            "	background: #375FAD;"
+            "}";
+
         result.set_to_good_status_without_value();
     }
 

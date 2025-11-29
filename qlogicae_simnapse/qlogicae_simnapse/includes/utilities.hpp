@@ -39,6 +39,16 @@ namespace QLogicaeSimNapse
 
         std::string DEFAULT_EVALUATION_NAME;
 
+        QString DEFAULT_WINDOW_ICON_RESOURCE_LINK;
+
+        QString DEFAULT_FONT_RESOURCE_LINK;
+
+        QString DEFAULT_WIDGET_STYLE;
+
+        QString DEFAULT_PUSH_BUTTON_WIDGET_STYLE_NORMAL;
+
+        QString DEFAULT_PUSH_BUTTON_WIDGET_STYLE_CLICKED;
+
         std::vector<std::vector<int>> DEFAULT_EVALUATION_INPUTS;
 
         std::vector<int> DEFAULT_EVALUATION_OUTPUTS;

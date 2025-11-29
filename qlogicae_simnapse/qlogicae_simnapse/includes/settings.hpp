@@ -2,6 +2,8 @@
 
 #include "ui_settings.h"
 
+#include "utilities.hpp"
+
 namespace Ui
 {
 	class SettingsClass;
