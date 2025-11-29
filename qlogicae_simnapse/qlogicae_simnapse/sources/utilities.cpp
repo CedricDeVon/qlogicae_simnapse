@@ -38,7 +38,13 @@ namespace QLogicaeSimNapse
     void Utilities::setup(
         QLogicaeCore::Result<void>& result
     )
-    {
+    {        
+        DEFAULT_SETTINGS_SCREEN_TYPE_KEY =
+            "settings__screen_type";
+
+        DEFAULT_SETTINGS_SCREEN_TYPE_VALUE =
+            3;
+
         DEFAULT_EVALUATION_CURRENT_EPOCH =
             1;
 
@@ -59,7 +65,7 @@ namespace QLogicaeSimNapse
             { "1", "1", "0", "0", "0", "0" }
         };
 
-        std::vector<std::vector<int>> DEFAULT_EVALUATION_TABLE;
+        
 
         result.set_to_good_status_without_value();
     }

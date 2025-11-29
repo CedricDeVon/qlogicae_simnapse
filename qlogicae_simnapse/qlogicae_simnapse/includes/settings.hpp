@@ -15,6 +15,7 @@ namespace QLogicaeSimNapse
 
 	public:
 		explicit Settings(QWidget* parent = nullptr);
+
 		~Settings();
 
 	signals:

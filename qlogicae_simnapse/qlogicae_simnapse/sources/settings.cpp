@@ -22,7 +22,7 @@ namespace QLogicaeSimNapse
 	void Settings::_setup_widgets()
 	{
 		_ui->comboBox_2->setCurrentIndex(
-			QLogicaeSimNapse::UTILITIES.DEFAULT_SETTINGS_SCREEN_TYPE
+			UTILITIES.DEFAULT_SETTINGS_SCREEN_TYPE_VALUE
 		);
 		
 		connect(
@@ -31,12 +31,6 @@ namespace QLogicaeSimNapse
 			this, [this](int index)
 			{
 				emit on_screen_type_changed(index);
-
-				/*
-				QLogicaeRulexCore::UTILITIES.APPLICATION_SETTINGS_CACHE.set_value_async<int>(
-					QLogicaeRulexCore::UTILITIES.APPLICATION_SETTINGS_CACHE_SCREEN_TYPE_KEY, index
-				);
-				*/
 			}
 		);
 	}

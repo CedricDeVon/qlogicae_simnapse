@@ -9,9 +9,9 @@ namespace QLogicaeSimNapse
     {
         _ui.setupUi(this);
 
-        _setup_window_screen();
         _setup_assets();
         _setup_widgets();
+        _setup_window_screen();
     }
 
     Application::~Application()
@@ -36,7 +36,7 @@ namespace QLogicaeSimNapse
             )
         );
         _change_screen_type(
-            3
+            UTILITIES.DEFAULT_SETTINGS_SCREEN_TYPE_VALUE
         );
     }
 

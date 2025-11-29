@@ -16,11 +16,16 @@ namespace QLogicaeSimNapse
 		Q_OBJECT
 
 	public:
-		explicit About(QWidget* parent = nullptr);
+		explicit About(
+			QWidget* parent = nullptr
+		);
+		
 		~About();
 
 	protected:
-		void showEvent(QShowEvent* event) override;
+		void showEvent(
+			QShowEvent* event
+		) override;
 
 	private:
 		Ui::AboutClass* _ui;

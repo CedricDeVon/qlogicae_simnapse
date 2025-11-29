@@ -17,6 +17,7 @@ namespace QLogicaeSimNapse
 		explicit Loading(
 			QWidget* parent = nullptr
 		);
+		
 		~Loading();
 
 	signals:
@@ -27,13 +28,16 @@ namespace QLogicaeSimNapse
 
 	private slots:
 		void update_loading_label();
+		
 		void update_progress_bar();
 
 	private:
 		Ui::LoadingClass* _ui;
 
 		QTimer* _dot_timer;
+		
 		QTimer* _progress_timer;
+
 		uint8_t _current_dot_count;
 
 		void _setup_widgets();

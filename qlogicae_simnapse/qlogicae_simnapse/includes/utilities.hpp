@@ -4,6 +4,8 @@
 
 #include "qlogicae_core/includes/result.hpp"
 #include "qlogicae_core/includes/utilities.hpp"
+#include "qlogicae_core/includes/rocksdb_database.hpp"
+#include "qlogicae_core/includes/application_utilities.hpp"
 
 namespace QLogicaeSimNapse
 {
@@ -16,7 +18,9 @@ namespace QLogicaeSimNapse
 
         int DEFAULT_EVALUATION_SLIDER_VALUE;
 
-        int DEFAULT_SETTINGS_SCREEN_TYPE;
+        std::string DEFAULT_SETTINGS_SCREEN_TYPE_KEY;
+
+        int DEFAULT_SETTINGS_SCREEN_TYPE_VALUE;
 
         std::string DEFAULT_EVALUATION_ERROR_RATE;
 
@@ -90,7 +94,7 @@ namespace QLogicaeSimNapse
             const Utilities& instance
             ) = delete;
     };
-
+    
     inline static Utilities& UTILITIES =
         Utilities::get_instance();
 }

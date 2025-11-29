@@ -25,10 +25,15 @@ namespace QLogicaeSimNapse
 
 	private:
 		Ui::SplashClass* _ui;
+		
 		QGraphicsOpacityEffect* _icon_effect;
+		
 		QGraphicsOpacityEffect* _label_effect;
+		
 		QPropertyAnimation* _icon_fade_animation;
+		
 		QPropertyAnimation* _label_fade_animation;
+
 		QParallelAnimationGroup* _main_animation_group;
 
 		void _setup_widgets();

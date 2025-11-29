@@ -16,13 +16,19 @@ namespace QLogicaeSimNapse
 		Q_OBJECT
 
 	public:
-		explicit Evaluation(QWidget* parent = nullptr);
+		explicit Evaluation(
+			QWidget* parent = nullptr
+		);
+		
 		~Evaluation();
 
 	protected:
-		void showEvent(QShowEvent* event) override;
+		void showEvent(
+			QShowEvent* event
+		) override;
 
 		void _setup_widgets();
+
 		void _on_input_changed();
 
 	private:

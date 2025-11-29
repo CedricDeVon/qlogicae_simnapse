@@ -21,6 +21,7 @@ namespace QLogicaeSimNapse
 		explicit MainMenu(
 			QWidget* parent = nullptr
 		);
+
 		~MainMenu();
 
 	signals:
@@ -30,7 +31,9 @@ namespace QLogicaeSimNapse
 		Ui::MainMenuClass* _ui;
 
 		About* _about_widget;
+		
 		Settings* _settings_widget;
+
 		Evaluation* _evaluation_widget;
 
 		QPushButton* _current_active_left_side_button;
