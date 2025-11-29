@@ -197,18 +197,13 @@ namespace QLogicaeSimNapseCore
         training_results.timestamp_started =
             QLogicaeCore::TIME.now();
 
-        AndOrNeuralNetworkTrainingEpochResults& epoch_results =
-            training_results.epoch_results[0];
-
         for (current_learning_epoch = 0;
             current_learning_epoch < configurations_maximum_learning_epoch;
             ++current_learning_epoch
             )
         {
-            epoch_results =
-                training_results.epoch_results[current_learning_epoch];
-            epoch_results.current_epoch = current_learning_epoch + 1;
-            epoch_results.timestamp_started = QLogicaeCore::TIME.now();
+            training_results.epoch_results[current_learning_epoch].current_epoch = current_learning_epoch + 1;
+            training_results.epoch_results[current_learning_epoch].timestamp_started = QLogicaeCore::TIME.now();
 
             for (input_index = 0;
                 input_index < 4;
@@ -223,10 +218,10 @@ namespace QLogicaeSimNapseCore
                     }
                 );
 
-                epoch_results.predictions[input_index] = prediction;
+                training_results.epoch_results[current_learning_epoch].predictions[input_index] = prediction;
 
                 error = _configurations.outputs[input_index] - prediction;
-                epoch_results.errors[input_index] = error;
+                training_results.epoch_results[current_learning_epoch].errors[input_index] = error;
 
                 for (model_weight_index = 0;
                     model_weight_index < 2;
@@ -235,27 +230,27 @@ namespace QLogicaeSimNapseCore
                 {
                     weight = _configurations.weights[model_weight_index] +
                         (configurations_model_learning_rate *
-                        error * _configurations.inputs[input_index][model_weight_index]);
+                            error * _configurations.inputs[input_index][model_weight_index]);
 
                     _configurations.weights[model_weight_index] =
-                        epoch_results.weights[model_weight_index] =
-                            weight;
+                        training_results.epoch_results[current_learning_epoch].weights[model_weight_index] =
+                        weight;
                 }
 
                 bias = _configurations.bias +
                     (configurations_model_learning_rate *
-                    error);
+                        error);
 
                 _configurations.bias =
-                    epoch_results.bias =
-                        bias;
+                    training_results.epoch_results[current_learning_epoch].bias =
+                    bias;
             }
 
-            epoch_results.timestamp_ended =
+            training_results.epoch_results[current_learning_epoch].timestamp_ended =
                 QLogicaeCore::TIME.now();
 
             _configurations.callback(
-                epoch_results
+                training_results.epoch_results[current_learning_epoch]
             );
         }
 

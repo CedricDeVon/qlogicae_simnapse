@@ -2,6 +2,11 @@
 
 #include "assembly.hpp"
 
+#include "qlogicae_simnapse_core/includes/and_or_neural_network.hpp"
+#include "qlogicae_simnapse_core/includes/and_or_neural_network_configurations.hpp"
+#include "qlogicae_simnapse_core/includes/and_or_neural_network_training_results.hpp"
+#include "qlogicae_simnapse_core/includes/and_or_neural_network_prediction_results.hpp"
+
 #include "qlogicae_core/includes/result.hpp"
 #include "qlogicae_core/includes/utilities.hpp"
 #include "qlogicae_core/includes/rocksdb_database.hpp"
@@ -25,6 +30,24 @@ namespace QLogicaeSimNapse
         std::string DEFAULT_EVALUATION_ERROR_RATE;
 
         std::vector<std::vector<std::string>> DEFAULT_EVALUATION_TABLE;
+
+        QLogicaeSimNapseCore::AndOrNeuralNetworkTrainingConfigurations NEURAL_NETWORK_TRAINING_CONFIGURATIONS;
+
+        QLogicaeSimNapseCore::AndOrNeuralNetworkTrainingResults NEURAL_NETWORK_TRAINING_RESULTS;
+
+        QLogicaeSimNapseCore::AndOrNeuralNetworkPredictionResults NEURAL_NETWORK_PREDICTION_RESULTS;
+
+        std::string DEFAULT_EVALUATION_NAME;
+
+        std::vector<std::vector<int>> DEFAULT_EVALUATION_INPUTS;
+
+        std::vector<int> DEFAULT_EVALUATION_OUTPUTS;
+
+        std::vector<double> DEFAULT_EVALUATION_WEIGHTS;
+
+        double DEFAULT_EVALUATION_BIAS;
+
+        double DEFAULT_EVALUATION_LEARNING_RATE;
 
         bool setup();
 
