@@ -9,7 +9,8 @@ namespace Ui
 
 namespace QLogicaeSimNapse
 {
-	class Loading : public QWidget
+	class Loading :
+		public QWidget
 	{
 		Q_OBJECT
 

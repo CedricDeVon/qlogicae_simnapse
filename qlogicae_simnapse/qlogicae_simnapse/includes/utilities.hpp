@@ -29,7 +29,13 @@ namespace QLogicaeSimNapse
 
         std::string DEFAULT_EVALUATION_ERROR_RATE;
 
+        std::string DEFAULT_EVALUATION_TRAINING_DURATION;
+
         std::vector<std::vector<std::string>> DEFAULT_EVALUATION_TABLE;
+
+		size_t DEFAULT_EVALUATION_TABLE_ROW_COUNT;
+
+		size_t DEFAULT_EVALUATION_TABLE_COLUMN_COUNT;
 
         QLogicaeSimNapseCore::AndOrNeuralNetworkTrainingConfigurations NEURAL_NETWORK_TRAINING_CONFIGURATIONS;
 

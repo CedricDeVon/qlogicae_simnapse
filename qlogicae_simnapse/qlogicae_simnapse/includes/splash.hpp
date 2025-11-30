@@ -9,7 +9,8 @@ namespace Ui
 
 namespace QLogicaeSimNapse
 {
-	class Splash : public QWidget
+	class Splash :
+		public QWidget
 	{
 		Q_OBJECT
 

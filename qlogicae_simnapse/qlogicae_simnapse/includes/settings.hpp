@@ -11,7 +11,8 @@ namespace Ui
 
 namespace QLogicaeSimNapse
 {
-	class Settings : public QWidget
+	class Settings :
+		public QWidget
 	{
 		Q_OBJECT
 

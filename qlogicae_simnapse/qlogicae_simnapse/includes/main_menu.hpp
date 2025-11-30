@@ -1,11 +1,11 @@
 #pragma once
 
+#include "ui_main_menu.h"
+
 #include "about.hpp"
 #include "settings.hpp"
 #include "utilities.hpp"
 #include "evaluation.hpp"
-
-#include "ui_main_menu.h"
 
 namespace Ui
 {
@@ -14,7 +14,8 @@ namespace Ui
 
 namespace QLogicaeSimNapse
 {
-	class MainMenu : public QWidget
+	class MainMenu :
+		public QWidget
 	{
 		Q_OBJECT
 
@@ -29,17 +30,18 @@ namespace QLogicaeSimNapse
 		void on_screen_changed(int);
 
 	private:
-		Ui::MainMenuClass* _ui;
-
 		About* _about_widget;
+		
+		Ui::MainMenuClass* _ui;
 		
 		Settings* _settings_widget;
 
 		Evaluation* _evaluation_widget;
 
+		std::string _current_widget_name;
+
 		QPushButton* _current_active_left_side_button;
 
-		std::string _current_widget_name;
 
 		void _change_widget(
 			QPushButton* clicked_button,

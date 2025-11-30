@@ -1,10 +1,10 @@
 #pragma once
 
+#include "ui_application.h"
+
 #include "splash.hpp"
 #include "loading.hpp"
 #include "main_menu.hpp"
-
-#include "ui_application.h"
 
 #include "utilities.hpp"
 
@@ -34,11 +34,11 @@ namespace QLogicaeSimNapse
         void _setup_assets();
         
         void _setup_widgets();
-        
-        void _setup_window_screen();
-        
+                
         void _change_screen_type(
             uint8_t index
         );
+
+        void _setup_window_screen();
     };
 }

@@ -57,13 +57,22 @@ namespace QLogicaeSimNapse
         DEFAULT_EVALUATION_ERROR_RATE =
             "0";
 
+        DEFAULT_EVALUATION_TRAINING_DURATION = 
+            "0";
+
         DEFAULT_EVALUATION_TABLE =
         {
-            { "0", "0", "0", "0", "0" },
-            { "1", "0", "0", "0", "0" },
-            { "0", "1", "0", "0", "0" },
-            { "1", "1", "1", "0", "0" }
+            { "0", "0", "0", "0", "0", "0", "0", "0" },
+            { "1", "0", "0", "0", "0", "0", "0", "0" },
+            { "0", "1", "0", "0", "0", "0", "0", "0" },
+            { "1", "1", "1", "0", "0", "0", "0", "0" }
         };
+
+        DEFAULT_EVALUATION_TABLE_ROW_COUNT =
+            DEFAULT_EVALUATION_TABLE.size();
+
+        DEFAULT_EVALUATION_TABLE_COLUMN_COUNT =
+            DEFAULT_EVALUATION_TABLE[0].size();
 
         DEFAULT_EVALUATION_NAME =
             "Perceptron";
