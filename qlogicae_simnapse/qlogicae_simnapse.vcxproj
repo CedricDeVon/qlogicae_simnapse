@@ -174,21 +174,9 @@ if not exist "%OUT_DIR%\platforms" mkdir "%OUT_DIR%\platforms"
 
 xcopy "%QT_DIR%\bin\Qt6Core.dll" "%LIB_DIR%\" /Y /F
 xcopy "%QT_DIR%\bin\Qt6Gui.dll" "%LIB_DIR%\" /Y /F
-xcopy "%QT_DIR%\bin\Qt6Network.dll" "%LIB_DIR%\" /Y /F
 xcopy "%QT_DIR%\bin\Qt6Widgets.dll" "%LIB_DIR%\" /Y /F
-xcopy "%QT_DIR%\bin\Qt6Bluetooth.dll" "%LIB_DIR%\" /Y /F
-xcopy "%QT_DIR%\bin\Qt6Concurrent.dll" "%LIB_DIR%\" /Y /F
-xcopy "%QT_DIR%\bin\Qt6OpenGL.dll" "%LIB_DIR%\" /Y /F
-xcopy "%QT_DIR%\bin\Qt6OpenGLWidgets.dll" "%LIB_DIR%\" /Y /F
-xcopy "%QT_DIR%\bin\Qt6Multimedia.dll" "%LIB_DIR%\" /Y /F
-xcopy "%QT_DIR%\bin\Qt6MultimediaWidgets.dll" "%LIB_DIR%\" /Y /F
 xcopy "%QT_DIR%\bin\Qt6Svg.dll" "%LIB_DIR%\" /Y /F
 xcopy "%QT_DIR%\bin\Qt6SvgWidgets.dll" "%LIB_DIR%\" /Y /F
-xcopy "%QT_DIR%\bin\Qt6Positioning.dll" "%LIB_DIR%\" /Y /F
-xcopy "%QT_DIR%\bin\Qt6Charts.dll" "%LIB_DIR%\" /Y /F
-xcopy "%QT_DIR%\bin\Qt6DataVisualization.dll" "%LIB_DIR%\" /Y /F
-xcopy "%QT_DIR%\bin\Qt6Pdf.dll" "%LIB_DIR%\" /Y /F
-xcopy "%QT_DIR%\bin\Qt6PdfWidgets.dll" "%LIB_DIR%\" /Y /F
 xcopy "%QT_DIR%\plugins\platforms\qwindows.dll" "%OUT_DIR%\platforms\" /Y /F</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
