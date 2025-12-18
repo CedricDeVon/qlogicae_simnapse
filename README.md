@@ -14,7 +14,7 @@
   <p style="font-style: italic;">Learning bits, like us</p>
 <div style="margin: 32px 64px;">
     
-![Version](https://img.shields.io/badge/Version-1.0.0-blue)
+![Version](https://img.shields.io/badge/Version-1.0.1-blue)
 ![GTest](https://img.shields.io/badge/GTest-Passing-green)
 ![Windows](https://img.shields.io/badge/OS-Windows-blue)
 ![MIT](https://img.shields.io/badge/License-MIT-red)

@@ -7,12 +7,25 @@
 
 
 
-<h2>📦 1.0.0 (Latest)</h2>
+<h2>📦 1.0.1 (Latest)</h2>
 
 <h3>📜 Overview</h3>
 
 <ul>
-    <li><p>Under Revision</p></li>
+    <li><p>PDF documentation upload</p></li>
+    <li><p>Windows Setup Wizard memory size optimization to about 15 MB</p></li>
+</ul>
+
+</br>
+
+
+
+<h2>📦 1.0.0</h2>
+
+<h3>📜 Overview</h3>
+
+<ul>
+    <li><p>Initial Implementation</p></li>
 </ul>
 
 </br>
